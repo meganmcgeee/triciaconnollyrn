@@ -6,7 +6,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. CONFIGURE YOUR GOOGLE APPS SCRIPT URL HERE
     // Follow sheets_connection_guide.md to get this URL.
-    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzr8ndacofagQ1Rv68XutDC1ONvLVvHg5hltKPe5weq2kDwWLE8iIAKEEO9jHMNzLRV/exec"; 
+    // Leave as "" to run in demo/simulated mode.
+    const GOOGLE_SHEET_URL = ""; 
 
     const leadForm = document.getElementById('lead-form');
     const formContainer = document.getElementById('form-container');
