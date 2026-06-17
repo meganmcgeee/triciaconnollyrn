@@ -51,7 +51,7 @@ function doPost(e) {
     var utmMedium = data.utm_medium || "";
     var utmCampaign = data.utm_campaign || "";
     
-    // Append new row to Google Sheet
+    // 1. Append new row to Google Sheet
     sheet.appendRow([
       timestamp, 
       name, 
@@ -63,6 +63,36 @@ function doPost(e) {
       utmMedium, 
       utmCampaign
     ]);
+    
+    // 2. Configure Notifications
+    // Change this to your preferred notification email
+    var emailRecipient = "pcm688@yahoo.com"; 
+    
+    // To send a direct text message for free, enter your mobile carrier's Email-to-SMS gateway:
+    // Verizon: "3108894846@vtext.com" | AT&T: "3108894846@txt.att.net" | T-Mobile: "3108894846@tmomail.net"
+    var smsRecipient = ""; 
+
+    // 3. Send Email Alert
+    var emailSubject = "🚨 NEW LEAD: " + name + " (" + service + ")";
+    var emailBody = "You have received a new lead from your concierge nursing website:\n\n" +
+                    "Name: " + name + "\n" +
+                    "Phone: " + phone + "\n" +
+                    "Email: " + email + "\n" +
+                    "Service: " + service + "\n" +
+                    "Message: " + message + "\n\n" +
+                    "UTM Campaign Details:\n" +
+                    "Source: " + utmSource + "\n" +
+                    "Medium: " + utmMedium + "\n" +
+                    "Campaign: " + utmCampaign + "\n\n" +
+                    "Spreadsheet Link: " + SpreadsheetApp.getActiveSpreadsheet().getUrl();
+    
+    MailApp.sendEmail(emailRecipient, emailSubject, emailBody);
+
+    // 4. Send SMS Alert (if recipient is provided)
+    if (smsRecipient && smsRecipient.trim() !== "") {
+      var smsBody = "New Lead Alert: " + name + " (" + phone + "). Service: " + service;
+      MailApp.sendEmail(smsRecipient, "", smsBody);
+    }
     
     // Return JSON success with CORS header
     return ContentService.createTextOutput(JSON.stringify({
