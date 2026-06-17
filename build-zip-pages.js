@@ -21,6 +21,40 @@ const template = fs.readFileSync(templatePath, 'utf8');
 
 console.log(`Loaded ${locations.length} target locations.`);
 
+const introTemplates = [
+  "For high-profile individuals, executives, and families seeking clinical excellence without compromise, Tricia Connolly, RN offers a completely bespoke medical management service inside your residence or estate in {{ENCLAVE}}.",
+  "Tricia Connolly, RN provides discrete private duty nursing and premium healthcare coordination for clients residing in the exclusive {{ENCLAVE}} community.",
+  "Designed for high-net-worth families, prominent executives, and public figures, Tricia Connolly, RN offers comprehensive, NDA-protected home nursing care throughout the {{ENCLAVE}} area.",
+  "Elite medical management and professional private duty nursing are now available directly in your home. Tricia Connolly, RN delivers personalized clinical services inside {{ENCLAVE}}."
+];
+
+const bulletSets = [
+  `<ul>
+                    <li>Absolute privacy protection and extensive experience with celebrity and high-net-worth clientele.</li>
+                    <li>Tailored, comprehensive home wellness coordination and triage in private residences.</li>
+                    <li>Postoperative transport and direct clinical discharge coordination from {{LOCAL_HOSPITAL}}.</li>
+                    <li>Direct interfacing with premier specialists at Cedars-Sinai, UCLA Health, and exclusive local pharmacy networks.</li>
+                </ul>`,
+  `<ul>
+                    <li>Uncompromising privacy safeguards and extensive experience with high-profile clientele.</li>
+                    <li>Personalized home wellness plans and preventative clinical coordination.</li>
+                    <li>Seamless discharge coordination and private medical transport from {{LOCAL_HOSPITAL}}.</li>
+                    <li>Direct communication lines with top specialists at UCLA, Cedars-Sinai, and local clinical networks.</li>
+                </ul>`,
+  `<ul>
+                    <li>Absolute confidentiality under strict NDAs for public figures and executives.</li>
+                    <li>Comprehensive home health triage, clinical vitals monitoring, and medication management.</li>
+                    <li>Post-surgical recovery oversight working closely with surgical teams at {{LOCAL_HOSPITAL}}.</li>
+                    <li>Access to elite local pharmacy networks and expedited custom medicine deliveries.</li>
+                </ul>`,
+  `<ul>
+                    <li>Discreet bedside manner tailored for high-security residences and gated estates.</li>
+                    <li>Preventative wellness checks, home IV hydration drips, and symptom management.</li>
+                    <li>Direct transport coordination and post-op care plans from {{LOCAL_HOSPITAL}}.</li>
+                    <li>Liaison services connecting family offices, security details, and concierge physicians.</li>
+                </ul>`
+];
+
 // Track generated filenames for sitemap
 const generatedSlugs = [];
 
@@ -93,6 +127,13 @@ locations.forEach((loc, index) => {
   const layoutVariants = ['', 'reversed', 'stacked'];
   const layoutClass = layoutVariants[index % 3];
 
+  // Dynamic copy selection to prevent duplicate content penalties
+  const introTemplate = introTemplates[index % introTemplates.length];
+  const bulletTemplate = bulletSets[index % bulletSets.length];
+
+  let introParagraph = introTemplate.replace(/{{ENCLAVE}}/g, loc.enclave);
+  let bulletPoints = bulletTemplate.replace(/{{LOCAL_HOSPITAL}}/g, loc.hospital);
+
   // Replace tokens in template
   let pageContent = template;
   pageContent = pageContent.replace(/{{NEIGHBORHOOD}}/g, loc.neighborhood);
@@ -105,6 +146,8 @@ locations.forEach((loc, index) => {
   pageContent = pageContent.replace(/{{FAQ_ANSWER}}/g, loc.faqAnswer);
   pageContent = pageContent.replace(/{{SCHEMA_MARKUP}}/g, schemaMarkup);
   pageContent = pageContent.replace(/{{LAYOUT_CLASS}}/g, layoutClass);
+  pageContent = pageContent.replace(/{{INTRO_PARAGRAPH}}/g, introParagraph);
+  pageContent = pageContent.replace(/{{BULLET_POINTS}}/g, bulletPoints);
 
   // Write file
   const filename = `${loc.slug}.html`;

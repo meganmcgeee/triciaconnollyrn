@@ -63,7 +63,8 @@ locations.forEach((loc) => {
   }
 
   // 3. Verify hyper-local copy replacement
-  if (content.includes('{{NEIGHBORHOOD}}') || content.includes('{{ZIP_CODE}}') || content.includes('{{ENCLAVE}}')) {
+  if (content.includes('{{NEIGHBORHOOD}}') || content.includes('{{ZIP_CODE}}') || content.includes('{{ENCLAVE}}') ||
+      content.includes('{{INTRO_PARAGRAPH}}') || content.includes('{{BULLET_POINTS}}') || content.includes('{{LAYOUT_CLASS}}')) {
     console.error(`Error: ${filename} still contains unreplaced template tokens`);
     errors++;
   }
