@@ -39,6 +39,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     captureUTMParameters();
 
+    // 2.5 Dynamic Ad Copy Swapping
+    function applyDynamicAdCopy() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (!serviceParam) return;
+
+        const landingTitle = document.getElementById('landing-title');
+        const landingIntro = document.getElementById('landing-intro');
+        const landingHeroImg = document.getElementById('landing-hero-img');
+        const leadServiceInput = document.getElementById('lead-service');
+        const specialtyBox = document.querySelector('.procedure-specialty-box');
+        const formHeading = document.getElementById('form-heading');
+
+        // Extract location name from subtitle (e.g. "Beverly Hills • 90210")
+        const subtitleEl = document.querySelector('header .subtitle');
+        const locationName = subtitleEl ? subtitleEl.textContent.split('•')[0].trim() : 'your area';
+
+        if (serviceParam === 'post-op') {
+            if (landingTitle) landingTitle.textContent = "Post-Operative Recovery Care";
+            if (landingIntro) landingIntro.textContent = `Facilitating a safe, doctor-compliant transition from surgery to home. Tricia Connolly, RN provides meticulous postoperative monitoring, sterile wound care, and pain management inside your residence in ${locationName}.`;
+            if (landingHeroImg) {
+                landingHeroImg.src = "assets/post-op.png";
+                landingHeroImg.alt = "Tricia Connolly, RN providing post-operative recovery care to a patient at home";
+            }
+            if (leadServiceInput) {
+                leadServiceInput.value = leadServiceInput.value.replace('concierge-', 'post-op-');
+            }
+        } else if (serviceParam === 'iv' || serviceParam === 'iv-therapy') {
+            if (landingTitle) landingTitle.textContent = "IV Hydration & Palliative Support";
+            if (landingIntro) landingIntro.textContent = `Dignified clinical comfort care and medical management. Tricia Connolly, RN administers customized in-home IV vitamin infusions, pain management, and holistic wellness support directly to your residence in ${locationName}.`;
+            if (landingHeroImg) {
+                landingHeroImg.src = "assets/iv-wellness.png";
+                landingHeroImg.alt = "Tricia Connolly, RN administering an IV hydration drip to a client in a modern wellness lounge";
+            }
+            if (leadServiceInput) {
+                leadServiceInput.value = leadServiceInput.value.replace('concierge-', 'iv-therapy-');
+            }
+            if (specialtyBox) {
+                specialtyBox.style.display = 'none';
+            }
+        } else if (serviceParam === 'b2b' || serviceParam === 'partner') {
+            if (landingTitle) landingTitle.textContent = "Professional & Surgeon Partnerships";
+            if (landingIntro) landingIntro.textContent = `Tricia Connolly, RN collaborates directly with premier surgical teams, concierge physicians, and family offices to execute bespoke, NDA-protected home recovery and clinical care plans in ${locationName}.`;
+            if (landingHeroImg) {
+                landingHeroImg.src = "assets/concierge.png";
+                landingHeroImg.alt = "Tricia Connolly, RN in a consultation meeting with an executive client";
+            }
+            if (leadServiceInput) {
+                leadServiceInput.value = leadServiceInput.value.replace('concierge-', 'b2b-');
+            }
+            if (specialtyBox) {
+                specialtyBox.innerHTML = `<strong>Clinical Collaboration &amp; Compliance:</strong> Tricia operates under the strict direction of your client's attending physician or surgeon, providing detailed logging (vitals, wound progression, drain output) and direct reporting compliance.`;
+            }
+            if (formHeading) {
+                formHeading.textContent = "Request Partnership Details / Refer a Client";
+            }
+        } else if (serviceParam === 'concierge') {
+            if (leadServiceInput && !leadServiceInput.value.includes('ad-')) {
+                leadServiceInput.value = 'ad-' + leadServiceInput.value;
+            }
+        }
+    }
+
+    applyDynamicAdCopy();
+
     // 3. Form Validation Helpers
     function showError(fieldId, message) {
         const errorSpan = document.getElementById(`error-${fieldId}`);
