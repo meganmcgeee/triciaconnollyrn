@@ -853,12 +853,15 @@ textarea {
 }
 
 /* Individual Action Button */
-.sticky-action-btn {
+.sticky-action-btn,
+.sticky-action-btn:link,
+.sticky-action-btn:visited,
+.sticky-action-btn:active {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 12px 22px;
-    color: var(--white); /* Pure White text for maximum contrast (17:1) */
+    color: var(--white) !important; /* Pure White text for maximum contrast (17:1), prevents visited link overrides */
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.82rem;
@@ -878,7 +881,7 @@ textarea {
 
 .sticky-action-btn:hover {
     background-color: var(--champagne); /* Gold background on hover */
-    color: var(--charcoal); /* Charcoal text on hover - high contrast! */
+    color: var(--charcoal) !important; /* Charcoal text on hover - high contrast! */
     box-shadow: 0 4px 15px rgba(176, 146, 106, 0.15);
 }
 
