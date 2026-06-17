@@ -24,7 +24,7 @@ console.log(`Loaded ${locations.length} target locations.`);
 // Track generated filenames for sitemap
 const generatedSlugs = [];
 
-locations.forEach((loc) => {
+locations.forEach((loc, index) => {
   // Generate JSON-LD Schema
   const schemaObj = {
     "@context": "https://schema.org",
@@ -89,6 +89,10 @@ locations.forEach((loc) => {
 
   const schemaMarkup = `<script type="application/ld+json">\n    ${JSON.stringify(schemaObj, null, 2).replace(/\n/g, '\n    ')}\n    </script>`;
 
+  // Alternate layouts: standard, reversed, stacked
+  const layoutVariants = ['', 'reversed', 'stacked'];
+  const layoutClass = layoutVariants[index % 3];
+
   // Replace tokens in template
   let pageContent = template;
   pageContent = pageContent.replace(/{{NEIGHBORHOOD}}/g, loc.neighborhood);
@@ -100,6 +104,7 @@ locations.forEach((loc) => {
   pageContent = pageContent.replace(/{{FAQ_QUESTION}}/g, loc.faqQuestion);
   pageContent = pageContent.replace(/{{FAQ_ANSWER}}/g, loc.faqAnswer);
   pageContent = pageContent.replace(/{{SCHEMA_MARKUP}}/g, schemaMarkup);
+  pageContent = pageContent.replace(/{{LAYOUT_CLASS}}/g, layoutClass);
 
   // Write file
   const filename = `${loc.slug}.html`;

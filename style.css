@@ -1281,6 +1281,37 @@ textarea {
     }
 }
 
-
-
-
+/* Layout variations for generated local landing pages */
+@media (min-width: 581px) {
+    /* Reversed layout: Media on left, text on right */
+    .landing-split.reversed {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+    .landing-split.reversed .landing-content {
+        order: 2;
+    }
+    .landing-split.reversed .landing-media {
+        order: 1;
+    }
+    
+    /* Stacked layout: Centered layout with media on top */
+    .landing-split.stacked {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+    }
+    .landing-split.stacked .landing-content {
+        order: 2;
+        align-items: center;
+    }
+    .landing-split.stacked .landing-content ul {
+        display: inline-block;
+        text-align: left;
+        margin: 0 auto 25px auto;
+    }
+    .landing-split.stacked .landing-media {
+        order: 1;
+        max-width: 550px;
+        margin: 0 auto;
+    }
+}

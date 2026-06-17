@@ -1,0 +1,11 @@
+{
+  "name": "trisha-connolly-rn",
+  "version": "1.0.0",
+  "description": "Bespoke Concierge Nursing Landing Pages & Local SEO System",
+  "main": "app.js",
+  "scripts": {
+    "build": "node build-zip-pages.js",
+    "test": "node verify-pages.js"
+  },
+  "dependencies": {}
+}

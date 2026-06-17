@@ -1,3 +1,10 @@
 .DS_Store
 .vercel/
 *.log
+node_modules/
+
+# Ignore generated local SEO landing pages
+*-[0-9][0-9][0-9][0-9][0-9].html
+
+# Ignore generated sitemap
+sitemap.xml
