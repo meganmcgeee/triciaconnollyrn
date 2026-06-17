@@ -94,30 +94,23 @@ function doPost(e) {
       MailApp.sendEmail(smsRecipient, "", smsBody);
     }
     
-    // Return JSON success with CORS header
+    // Return JSON success
     return ContentService.createTextOutput(JSON.stringify({
       "status": "success",
       "message": "Lead captured successfully"
-    })).setMimeType(ContentService.MimeType.JSON)
-       .setHeader("Access-Control-Allow-Origin", "*");
+    })).setMimeType(ContentService.MimeType.JSON);
        
   } catch (error) {
     // Return error details
     return ContentService.createTextOutput(JSON.stringify({
       "status": "error",
       "message": error.toString()
-    })).setMimeType(ContentService.MimeType.JSON)
-       .setHeader("Access-Control-Allow-Origin", "*");
+    })).setMimeType(ContentService.MimeType.JSON);
   }
 }
 
 // Handle CORS Preflight requests
-function doOptions(e) {
-  return ContentService.createTextOutput("")
-    .setHeader("Access-Control-Allow-Origin", "*")
-    .setHeader("Access-Control-Allow-Methods", "POST, OPTIONS")
-    .setHeader("Access-Control-Allow-Headers", "Content-Type");
-}
+// (No longer needed: Google Apps Script web apps automatically redirect cross-origin requests)
 ```
 
 4. Click the **Save** icon (floppy disk) at the top of the editor.
