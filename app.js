@@ -483,5 +483,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Share Profile Button click handler
+    const shareBtn = document.getElementById('share-profile-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'Tricia Connolly, RN - Bespoke Concierge Nursing',
+                text: 'Elite private duty concierge nursing and post-operative recovery monitoring in Beverly Hills and Greater Los Angeles.',
+                url: window.location.origin || 'https://triciaconnollyrn.com'
+            };
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                    console.log('Profile shared successfully');
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'share', {
+                            'method': 'native_web_share',
+                            'content_type': 'profile'
+                        });
+                    }
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                }
+            } else {
+                // Clipboard fallback
+                try {
+                    await navigator.clipboard.writeText(shareData.url);
+                    // Show custom toast notification
+                    if (toast && toastMessage) {
+                        toastMessage.textContent = 'Profile link copied to clipboard. Share with discretion.';
+                        toast.classList.add('show');
+                        toast.removeAttribute('aria-hidden');
+                        
+                        setTimeout(() => {
+                            toast.classList.remove('show');
+                            toast.setAttribute('aria-hidden', 'true');
+                        }, 4000);
+                    }
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'share', {
+                            'method': 'clipboard_copy',
+                            'content_type': 'profile'
+                        });
+                    }
+                } catch (err) {
+                    console.error('Failed to copy text:', err);
+                }
+            }
+        });
+    }
 });
 
