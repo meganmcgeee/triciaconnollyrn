@@ -1314,3 +1314,23 @@ textarea {
         margin: 0 auto;
     }
 }
+
+/* Procedure Specialty Focus Callout Box */
+.procedure-specialty-box {
+    background: rgba(176, 146, 106, 0.05); /* Soft 5% Champagne gold background */
+    border-left: 3px solid var(--accent);
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    text-align: left;
+}
+.procedure-specialty-box strong {
+    color: var(--accent);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 4px;
+}

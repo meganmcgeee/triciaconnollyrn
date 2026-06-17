@@ -8,7 +8,11 @@
     "customCopy": "Whether recovering from complex cosmetic surgery or managing a private wellness plan, Tricia provides discrete, estate-triage concierge nursing in the privacy of your Trousdale Estates villa.",
     "faqTopic": "Trousdale Estate Security & Privacy",
     "faqQuestion": "How do you coordinate private care at Trousdale Estates homes?",
-    "faqAnswer": "Tricia works directly with estate managers and private security teams to establish access schedules. She maintains the absolute highest level of discretion, working under comprehensive NDAs."
+    "faqAnswer": "Tricia works directly with estate managers and private security teams to establish access schedules. She maintains the absolute highest level of discretion, working under comprehensive NDAs.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "90210",
@@ -19,7 +23,11 @@
     "customCopy": "Tricia brings premium bedside clinical monitoring and proactive symptom management straight to your estate in the tree-lined flats of Beverly Hills.",
     "faqTopic": "24/7 Shift Coverage",
     "faqQuestion": "Are you available for 24/7 care in Beverly Hills?",
-    "faqAnswer": "Yes. For intensive postoperative recovery or high-acuity needs, Tricia coordinates round-the-clock shift coverage to ensure you are never left without professional clinical monitoring."
+    "faqAnswer": "Yes. For intensive postoperative recovery or high-acuity needs, Tricia coordinates round-the-clock shift coverage to ensure you are never left without professional clinical monitoring.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "90212",
@@ -30,7 +38,11 @@
     "customCopy": "Access direct, private medical support and wellness hydration therapy in the central Crescent and Golden Triangle area of Beverly Hills.",
     "faqTopic": "Liaison with Golden Triangle Physicians",
     "faqQuestion": "Do you coordinate with doctors based in the Beverly Hills Golden Triangle?",
-    "faqAnswer": "Absolutely. Tricia routinely collaborates with premier physicians, surgeons, and specialists located on Bedford, Roxbury, and Linden Drive to execute custom-tailored recovery plans."
+    "faqAnswer": "Absolutely. Tricia routinely collaborates with premier physicians, surgeons, and specialists located on Bedford, Roxbury, and Linden Drive to execute custom-tailored recovery plans.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "90077",
@@ -41,7 +53,11 @@
     "customCopy": "Tricia Connolly, RN offers high-security, premium concierge nursing care inside the private, double-gated community of Bel Air Crest and East Gate estates.",
     "faqTopic": "Bel Air Gate Clearances",
     "faqQuestion": "How do you manage gate clearance and visitor security at Bel Air estates?",
-    "faqAnswer": "Prior to the first shift, Tricia secures necessary gate credentials and coordinates clearance directly with Bel Air community security patrol or your household's security detail."
+    "faqAnswer": "Prior to the first shift, Tricia secures necessary gate credentials and coordinates clearance directly with Bel Air community security patrol or your household's security detail.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   },
   {
     "zip": "90077",
@@ -52,7 +68,11 @@
     "customCopy": "Experience absolute dignity, medical precision, and concierge clinical care at your private residence in Holmby Hills.",
     "faqTopic": "Private Aviation Travel Support",
     "faqQuestion": "Do you offer private duty travel nursing from Holmby Hills?",
-    "faqAnswer": "Yes. Tricia can accompany you as a travel nurse, starting directly from your Holmby Hills residence to private aviation terminals at LAX or Van Nuys Airport, supporting both domestic and international trips."
+    "faqAnswer": "Yes. Tricia can accompany you as a travel nurse, starting directly from your Holmby Hills residence to private aviation terminals at LAX or Van Nuys Airport, supporting both domestic and international trips.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "90049",
@@ -63,7 +83,11 @@
     "customCopy": "Tricia provides executive private-duty nursing, IV hydration, and postoperative monitoring directly to your home in Brentwood Park.",
     "faqTopic": "Family Office Coordination",
     "faqQuestion": "Do you coordinate with Brentwood-based family offices?",
-    "faqAnswer": "Yes. Tricia routinely coordinates billing, schedules, and NDAs directly with family offices and personal assistants to ensure a seamless, administrative-free experience for the client."
+    "faqAnswer": "Yes. Tricia routinely coordinates billing, schedules, and NDAs directly with family offices and personal assistants to ensure a seamless, administrative-free experience for the client.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "90049",
@@ -74,7 +98,11 @@
     "customCopy": "Recover comfortably in your Brentwood Heights or Kenter Canyon residence with professional RN monitoring, pain management, and clinical care.",
     "faqTopic": "Arrival Coordination",
     "faqQuestion": "What is your typical arrival window in Brentwood Heights?",
-    "faqAnswer": "For scheduled concierge services and IV therapy, Tricia offers a precise arrival window. For post-op recovery care, she coordinates transport times directly with your outpatient surgery center."
+    "faqAnswer": "For scheduled concierge services and IV therapy, Tricia offers a precise arrival window. For post-op recovery care, she coordinates transport times directly with your outpatient surgery center.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "90272",
@@ -85,7 +113,11 @@
     "customCopy": "Tricia delivers premier private duty nursing and custom IV hydration to your estate in the exclusive Riviera neighborhood of Pacific Palisades.",
     "faqTopic": "Saint John's Discharge Liaison",
     "faqQuestion": "How does post-op recovery work for surgeries at Saint John's?",
-    "faqAnswer": "Tricia coordinates discharge directly with the recovery team at Providence Saint John's Health Center, coordinates your transportation, and manages your immediate post-op care plan at home."
+    "faqAnswer": "Tricia coordinates discharge directly with the recovery team at Providence Saint John's Health Center, coordinates your transportation, and manages your immediate post-op care plan at home.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   },
   {
     "zip": "90272",
@@ -96,7 +128,11 @@
     "customCopy": "Receive medical management, post-surgical care, and wellness drips in the ocean-breeze comfort of your Huntington Palisades home.",
     "faqTopic": "Custom In-Home IV Hydration",
     "faqQuestion": "Are IV infusions customized to client needs in The Huntington?",
-    "faqAnswer": "Yes. Tricia coordinates with your private physician to administer custom, medically-indicated IV hydration, vitamin, and electrolyte blends directly in your home."
+    "faqAnswer": "Yes. Tricia coordinates with your private physician to administer custom, medically-indicated IV hydration, vitamin, and electrolyte blends directly in your home.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "90272",
@@ -107,7 +143,11 @@
     "customCopy": "Tricia provides compassionate palliative care, medical symptom management, and IV support in Castellammare and the Palisades Highlands.",
     "faqTopic": "Palliative Support Options",
     "faqQuestion": "Is palliative support available in the Palisades Highlands?",
-    "faqAnswer": "Yes. Tricia specializes in at-home palliative and compassionate end-of-life care, working to ensure maximum comfort, pain management, and dignity."
+    "faqAnswer": "Yes. Tricia specializes in at-home palliative and compassionate end-of-life care, working to ensure maximum comfort, pain management, and dignity.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "90265",
@@ -118,7 +158,11 @@
     "customCopy": "Tricia Connolly, RN offers elite concierge nursing and clinical recovery care on the water at Malibu Colony and Carbon Beach.",
     "faqTopic": "Malibu Beach Access & Logistical Coordination",
     "faqQuestion": "How do you coordinate care along Malibu's beach roads?",
-    "faqAnswer": "Tricia is familiar with the logistical challenges of Malibu beach roads (PCH/Colony Road). She coordinates parking access and private estate entry details in advance."
+    "faqAnswer": "Tricia is familiar with the logistical challenges of Malibu beach roads (PCH/Colony Road). She coordinates parking access and private estate entry details in advance.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "90265",
@@ -129,7 +173,11 @@
     "customCopy": "Recover in quiet coastal comfort with professional post-op monitoring and wellness drips at your Point Dume residence.",
     "faqTopic": "Santa Monica Surgical Coordination",
     "faqQuestion": "Can you coordinate care with Santa Monica surgery centers?",
-    "faqAnswer": "Yes. Tricia routinely coordinates discharge and postoperative care plans with major outpatient surgery centers in Santa Monica and West LA."
+    "faqAnswer": "Yes. Tricia routinely coordinates discharge and postoperative care plans with major outpatient surgery centers in Santa Monica and West LA.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   },
   {
     "zip": "90265",
@@ -140,7 +188,11 @@
     "customCopy": "Receive private, high-end nursing support, IV therapy, and clinical monitoring at your Broad Beach estate.",
     "faqTopic": "Malibu Travel Companionship",
     "faqQuestion": "Do you offer travel nursing assistance for clients departing from Malibu?",
-    "faqAnswer": "Yes. Tricia can assist with home preparation, transport to the airport (LAX/Van Nuys/Santa Monica Airport), and accompany you as a travel nurse."
+    "faqAnswer": "Yes. Tricia can assist with home preparation, transport to the airport (LAX/Van Nuys/Santa Monica Airport), and accompany you as a travel nurse.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "90402",
@@ -151,7 +203,11 @@
     "customCopy": "Tricia provides professional private duty nursing and custom IV wellness support to residences in the North of Montana neighborhood of Santa Monica.",
     "faqTopic": "Local Pharmacy Collaborations",
     "faqQuestion": "How do you coordinate pharmacy deliveries in North of Montana?",
-    "faqAnswer": "Tricia interfaces directly with local premium pharmacies in Santa Monica and West LA to manage prescription drop-offs and clinical supplies."
+    "faqAnswer": "Tricia interfaces directly with local premium pharmacies in Santa Monica and West LA to manage prescription drop-offs and clinical supplies.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "90401",
@@ -162,7 +218,11 @@
     "customCopy": "Access elite clinical care, postoperative check-ins, and IV hydration at your luxury condominium or residence on Ocean Avenue.",
     "faqTopic": "Short-Term Check-ins",
     "faqQuestion": "Are you available for short-term post-op check-ins?",
-    "faqAnswer": "Yes. For minor surgeries, Tricia provides short-term clinical monitoring (such as 4 to 8 hour postoperative windows) to ensure safety and comfort."
+    "faqAnswer": "Yes. For minor surgeries, Tricia provides short-term clinical monitoring (such as 4 to 8 hour postoperative windows) to ensure safety and comfort.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "90069",
@@ -173,7 +233,11 @@
     "customCopy": "Discrete, premium private duty nursing and IV hydration in the high-profile hills of the Sunset Strip and Bird Streets.",
     "faqTopic": "High-Profile Discretion & NDAs",
     "faqQuestion": "How do you protect client privacy in the high-profile Sunset Strip area?",
-    "faqAnswer": "Tricia operates under strict, legally-binding NDAs. She maintains an extremely low profile, arriving in an unmarked vehicle with absolute discretion."
+    "faqAnswer": "Tricia operates under strict, legally-binding NDAs. She maintains an extremely low profile, arriving in an unmarked vehicle with absolute discretion.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   },
   {
     "zip": "90068",
@@ -184,7 +248,11 @@
     "customCopy": "Tricia delivers executive nursing, post-surgical care, and wellness drips in the Hollywood Hills (Mount Olympus/Outpost).",
     "faqTopic": "Cosmetic Recovery Expertise",
     "faqQuestion": "Do you offer post-op support for cosmetic surgery?",
-    "faqAnswer": "Yes. Tricia is highly experienced in caring for cosmetic and reconstructive surgery patients, monitoring swelling, pain, and surgical sites."
+    "faqAnswer": "Yes. Tricia is highly experienced in caring for cosmetic and reconstructive surgery patients, monitoring swelling, pain, and surgical sites.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "90027",
@@ -195,7 +263,11 @@
     "customCopy": "Premium private duty nursing, post-op monitoring, and wellness drips in the historic Los Feliz Hills.",
     "faqTopic": "Los Feliz Physician Liaison",
     "faqQuestion": "Do you coordinate with family physicians in Los Feliz?",
-    "faqAnswer": "Yes. Tricia works in close collaboration with your family doctor or primary concierge physician to implement their exact clinical protocol."
+    "faqAnswer": "Yes. Tricia works in close collaboration with your family doctor or primary concierge physician to implement their exact clinical protocol.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "91302",
@@ -206,7 +278,11 @@
     "customCopy": "Experience secure, clinical care and custom IV hydration behind the gates in Calabasas and Hidden Hills.",
     "faqTopic": "Calabasas Gate Clearances",
     "faqQuestion": "How do you coordinate gate entry in gated communities like The Oaks?",
-    "faqAnswer": "Tricia requests gate registration in advance. She coordinates directly with your security detail to ensure prompt and secure arrival."
+    "faqAnswer": "Tricia requests gate registration in advance. She coordinates directly with your security detail to ensure prompt and secure arrival.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "90291",
@@ -217,7 +293,11 @@
     "customCopy": "Tricia offers professional at-home nursing and wellness infusions in the Venice Canals and Abbot Kinney communities.",
     "faqTopic": "Venice At-Home IV Services",
     "faqQuestion": "Can you provide IV hydration for local Venice residents?",
-    "faqAnswer": "Yes. Tricia provides in-home IV vitamin hydration and electrolyte replenishment at your private residence."
+    "faqAnswer": "Yes. Tricia provides in-home IV vitamin hydration and electrolyte replenishment at your private residence.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   },
   {
     "zip": "90292",
@@ -228,7 +308,11 @@
     "customCopy": "Receive quiet, beachside clinical monitoring, post-op recovery care, and wellness hydration in Marina del Rey.",
     "faqTopic": "Marina Surgical Alliances",
     "faqQuestion": "Do you coordinate with surgeons located in Marina del Rey?",
-    "faqAnswer": "Yes. Tricia collaborates with surgeons and outpatient centers across Marina del Rey, Playa Vista, and West LA."
+    "faqAnswer": "Yes. Tricia collaborates with surgeons and outpatient centers across Marina del Rey, Playa Vista, and West LA.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "90266",
@@ -239,7 +323,11 @@
     "customCopy": "Tricia provides private nursing, postoperative monitoring, and IV wellness drips to residences in Manhattan Beach.",
     "faqTopic": "South Bay Coverage Policies",
     "faqQuestion": "Is Manhattan Beach in your primary service area?",
-    "faqAnswer": "Yes. Tricia regularly provides concierge clinical services to clients along the South Bay, including Manhattan Beach, Hermosa Beach, and Palos Verdes."
+    "faqAnswer": "Yes. Tricia regularly provides concierge clinical services to clients along the South Bay, including Manhattan Beach, Hermosa Beach, and Palos Verdes.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "90254",
@@ -250,7 +338,11 @@
     "customCopy": "Oceanfront concierge nursing, private recovery care, and IV hydration along Hermosa Beach's Strand.",
     "faqTopic": "South Bay Surgical Drop-offs",
     "faqQuestion": "Do you support surgical recovery for South Bay outpatient procedures?",
-    "faqAnswer": "Yes. Tricia coordinates client pick-up and home care for procedures performed at surgical centers throughout the South Bay."
+    "faqAnswer": "Yes. Tricia coordinates client pick-up and home care for procedures performed at surgical centers throughout the South Bay.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "90274",
@@ -261,7 +353,11 @@
     "customCopy": "Tricia provides private duty concierge nursing, palliative support, and IV hydration on the Palos Verdes Peninsula.",
     "faqTopic": "Palos Verdes Booking Windows",
     "faqQuestion": "Are your services available on weekends in Palos Verdes?",
-    "faqAnswer": "Yes. Tricia offers flexible scheduling, including weekend and holiday coverage for pre-booked recovery or wellness plans."
+    "faqAnswer": "Yes. Tricia offers flexible scheduling, including weekend and holiday coverage for pre-booked recovery or wellness plans.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   },
   {
     "zip": "90274",
@@ -272,7 +368,11 @@
     "customCopy": "Discrete, elite private duty nursing and custom IV hydration behind the private gates of Rolling Hills.",
     "faqTopic": "Equestrian & Large Gated Clearances",
     "faqQuestion": "How do you handle equestrian and large property gate security in Rolling Hills?",
-    "faqAnswer": "Tricia is accustomed to high-security protocols and coordinates credentials directly with your security office or gate managers."
+    "faqAnswer": "Tricia is accustomed to high-security protocols and coordinates credentials directly with your security office or gate managers.",
+    "specialtyName": "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
+    "clinicalCondition": "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
+    "procedureFAQQuestion": "What is your clinical protocol for post-facelift recovery at home?",
+    "procedureFAQAnswer": "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     "zip": "91403",
@@ -283,7 +383,11 @@
     "customCopy": "Tricia Connolly, RN brings premium concierge nursing and post-op care to residences South of the Boulevard in Sherman Oaks.",
     "faqTopic": "San Fernando Valley Travel Policies",
     "faqQuestion": "Do you serve the San Fernando Valley?",
-    "faqAnswer": "Yes. Tricia serves South of the Boulevard neighborhoods in Sherman Oaks, Studio City, and Encino."
+    "faqAnswer": "Yes. Tricia serves South of the Boulevard neighborhoods in Sherman Oaks, Studio City, and Encino.",
+    "specialtyName": "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
+    "clinicalCondition": "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
+    "procedureFAQQuestion": "How do you manage surgical drains and compression garments after liposuction?",
+    "procedureFAQAnswer": "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     "zip": "91604",
@@ -294,7 +398,11 @@
     "customCopy": "Professional clinical monitoring, post-surgical recovery, and IV wellness drips in Fryman Canyon.",
     "faqTopic": "Valley-to-Cedars Medical Logistics",
     "faqQuestion": "Can you assist with transport to Cedars-Sinai from Studio City?",
-    "faqAnswer": "Yes. Tricia can manage your medical transport and clinical care, bridging your return from Cedars-Sinai or Beverly Hills surgery clinics."
+    "faqAnswer": "Yes. Tricia can manage your medical transport and clinical care, bridging your return from Cedars-Sinai or Beverly Hills surgery clinics.",
+    "specialtyName": "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
+    "clinicalCondition": "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
+    "procedureFAQQuestion": "What specialized monitoring do you provide for complex reconstructive surgery?",
+    "procedureFAQAnswer": "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   },
   {
     "zip": "91316",
@@ -305,6 +413,10 @@
     "customCopy": "High-security concierge nursing, IV therapy, and post-op recovery care in the Royal Oaks community of Encino.",
     "faqTopic": "Estate Staff Collaboration",
     "faqQuestion": "Do you work with private chefs for post-op nutrition?",
-    "faqAnswer": "Yes. Tricia regularly coordinates care plans with estate staff, including private chefs, to ensure nutritional plans align with recovery needs."
+    "faqAnswer": "Yes. Tricia regularly coordinates care plans with estate staff, including private chefs, to ensure nutritional plans align with recovery needs.",
+    "specialtyName": "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
+    "clinicalCondition": "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
+    "procedureFAQQuestion": "How do you assist with mobility and pain management after orthopedic or spine surgery?",
+    "procedureFAQAnswer": "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   }
 ]

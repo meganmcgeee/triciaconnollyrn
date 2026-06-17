@@ -148,6 +148,10 @@ locations.forEach((loc, index) => {
   pageContent = pageContent.replace(/{{LAYOUT_CLASS}}/g, layoutClass);
   pageContent = pageContent.replace(/{{INTRO_PARAGRAPH}}/g, introParagraph);
   pageContent = pageContent.replace(/{{BULLET_POINTS}}/g, bulletPoints);
+  pageContent = pageContent.replace(/{{SPECIALTY_NAME}}/g, loc.specialtyName);
+  pageContent = pageContent.replace(/{{CLINICAL_CONDITION}}/g, loc.clinicalCondition);
+  pageContent = pageContent.replace(/{{PROCEDURE_FAQ_QUESTION}}/g, loc.procedureFAQQuestion);
+  pageContent = pageContent.replace(/{{PROCEDURE_FAQ_ANSWER}}/g, loc.procedureFAQAnswer);
 
   // Write file
   const filename = `${loc.slug}.html`;
