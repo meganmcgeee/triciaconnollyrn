@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'seed-1',
             rating: 5,
             category: 'post-op',
-            text: "Following my complex orthopedic surgery at Cedars-Sinai, Tricia provided round-the-clock recovery monitoring at my Bel Air estate. Her clinical precision, proactive pain management, and absolute professionalism made my rehabilitation seamless. She is a top-tier nurse.",
+            text: "Following my complex reconstructive surgery at Cedars-Sinai, Tricia provided round-the-clock recovery monitoring at my Bel Air estate. Her clinical precision, proactive pain management, and absolute professionalism made my rehabilitation seamless. She is a top-tier nurse.",
             author: "H. K.",
             location: "Bel Air, CA",
             date: "May 12, 2026",

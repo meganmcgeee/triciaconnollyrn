@@ -29,12 +29,6 @@ const specialties = [
     clinicalCondition: "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
     procedureFAQQuestion: "What specialized monitoring do you provide for complex reconstructive surgery?",
     procedureFAQAnswer: "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
-  },
-  {
-    specialtyName: "Major Orthopedic & Spine Recovery (Joint Replacements, Laminectomy, Spinal Fusions)",
-    clinicalCondition: "early mobility assistance, neurovascular checks, DVT prevention, and post-surgical pain management",
-    procedureFAQQuestion: "How do you assist with mobility and pain management after orthopedic or spine surgery?",
-    procedureFAQAnswer: "Tricia administers prescribed pain regimens to facilitate scheduled physical therapy, performs neurovascular checks (pulse, sensation, movement), monitors for deep vein thrombosis (DVT), and assists with safe transfer techniques in your home."
   }
 ];
 
