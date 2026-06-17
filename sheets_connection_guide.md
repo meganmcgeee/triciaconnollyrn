@@ -66,11 +66,11 @@ function doPost(e) {
     
     // 2. Configure Notifications
     // Change this to your preferred notification email
-    var emailRecipient = "pcm688@yahoo.com"; 
+    var emailRecipient = "triciaconnolly724@gmail.com"; 
     
     // To send a direct text message for free, enter your mobile carrier's Email-to-SMS gateway:
     // Verizon: "3108894846@vtext.com" | AT&T: "3108894846@txt.att.net" | T-Mobile: "3108894846@tmomail.net"
-    var smsRecipient = ""; 
+    var smsRecipient = ""; // Insert carrier gateway address here (e.g. "3108894846@vtext.com") 
 
     // 3. Send Email Alert
     var emailSubject = "🚨 NEW LEAD: " + name + " (" + service + ")";
