@@ -1144,9 +1144,9 @@ textarea {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+    /* Allow text content to render first on mobile so copy is above the fold */
     .landing-media {
-        order: -1; /* Place image at top on mobile */
+        order: 0;
     }
     
     .landing-hero-img {
@@ -1293,15 +1293,14 @@ textarea {
     .landing-split.reversed .landing-media {
         order: 1;
     }
-    
-    /* Stacked layout: Centered layout with media on top */
+    /* Stacked layout: Centered layout with content on top, media below */
     .landing-split.stacked {
         grid-template-columns: 1fr;
         gap: 35px;
         text-align: center;
     }
     .landing-split.stacked .landing-content {
-        order: 2;
+        order: 1;
         align-items: center;
     }
     .landing-split.stacked .landing-content ul {
@@ -1310,7 +1309,7 @@ textarea {
         margin: 0 auto 25px auto;
     }
     .landing-split.stacked .landing-media {
-        order: 1;
+        order: 2;
         max-width: 550px;
         margin: 0 auto;
     }
