@@ -174,6 +174,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const thankYouMessage = successContainer.querySelector('.success-title');
         thankYouMessage.textContent = `Thank You, ${firstName}`;
 
+        // GA4 Google Analytics Event Logging
+        if (typeof gtag === 'function') {
+            const serviceVal = document.getElementById('lead-service')?.value || 'unknown';
+            const utmSourceVal = document.getElementById('utm_source')?.value || 'direct';
+            const utmMediumVal = document.getElementById('utm_medium')?.value || '';
+            const utmCampaignVal = document.getElementById('utm_campaign')?.value || '';
+            
+            gtag('event', 'generate_lead', {
+                'service_type': serviceVal,
+                'utm_source': utmSourceVal,
+                'utm_medium': utmMediumVal,
+                'utm_campaign': utmCampaignVal,
+                'lead_status': isDemo ? 'simulated' : 'live'
+            });
+            console.log(`GA4: generate_lead event logged for service "${serviceVal}" (status: ${isDemo ? 'simulated' : 'live'})`);
+        }
+
         if (isDemo) {
             const demoNotice = document.createElement('p');
             demoNotice.className = 'demo-notice';
@@ -185,4 +202,42 @@ document.addEventListener('DOMContentLoaded', () => {
             successContainer.appendChild(demoNotice);
         }
     }
+
+    // Track all tel:, sms:, and mailto: link clicks globally on the page
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a');
+        if (!anchor) return;
+        
+        const href = anchor.getAttribute('href') || '';
+        let contactMethod = '';
+        let contactVal = '';
+        
+        if (href.startsWith('tel:')) {
+            contactMethod = 'phone';
+            contactVal = href.replace('tel:', '');
+        } else if (href.startsWith('sms:')) {
+            contactMethod = 'sms';
+            contactVal = href.split('?')[0].replace('sms:', '');
+        } else if (href.startsWith('mailto:')) {
+            contactMethod = 'email';
+            contactVal = href.replace('mailto:', '');
+        }
+        
+        if (contactMethod) {
+            // Determine position/type
+            let position = 'general_link';
+            if (anchor.closest('header')) {
+                position = 'header';
+            }
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'contact_click', {
+                    'method': contactMethod,
+                    'position': position,
+                    'destination': contactVal
+                });
+                console.log(`GA4: contact_click logged (method: ${contactMethod}, position: ${position})`);
+            }
+        }
+    });
 });

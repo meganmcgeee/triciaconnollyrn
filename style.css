@@ -1156,6 +1156,128 @@ textarea {
     }
 }
 
+/* FAQ Accordion Section */
+.faq-section {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.faq-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.45rem;
+    color: var(--text-primary);
+    font-weight: 400;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 0;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.faq-item[open] {
+    border-color: var(--champagne);
+    box-shadow: 0 8px 25px rgba(176, 146, 106, 0.05);
+}
+
+.faq-question {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    padding: 18px 24px;
+    cursor: pointer;
+    list-style: none; /* Hide default summary marker */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-fast);
+    outline: none;
+    user-select: none;
+}
+
+/* Custom indicator icon for summary since we hid standard list-style */
+.faq-question::-webkit-details-marker {
+    display: none; /* Hide Chrome/Safari marker */
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--champagne);
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-question:hover {
+    background-color: var(--champagne-light);
+    color: var(--champagne-dark);
+}
+
+.faq-question:focus-visible {
+    background-color: var(--champagne-light);
+    outline: 2px solid var(--champagne);
+}
+
+.faq-body {
+    padding: 0 24px 20px 24px;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    font-weight: 300;
+    border-top: 1px solid #f8f8fa;
+    animation: slideDownFadeIn 0.3s ease-out forwards;
+}
+
+.faq-body p {
+    margin: 12px 0 0 0;
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustments for FAQ */
+@media (max-width: 580px) {
+    .faq-section {
+        margin-top: 35px;
+    }
+    
+    .faq-question {
+        padding: 15px 18px;
+        font-size: 0.85rem;
+    }
+    
+    .faq-body {
+        padding: 0 18px 15px 18px;
+        font-size: 0.82rem;
+    }
+}
+
 
 
 

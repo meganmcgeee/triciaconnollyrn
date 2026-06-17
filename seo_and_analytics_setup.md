@@ -48,8 +48,8 @@ When you run search ads (Google Ads, Meta/Facebook Ads), you can track which exa
 
 ### Example URLs to use for your Ads:
 * **For Post-Op Recovery Ads**:
-  `https://triciaconnollyrn.com/post-op.html?utm_source=google&utm_medium=cpc&utm_campaign=post-op-beverly-hills`
+  `https://triciaconnollyrn.com/post-op?utm_source=google&utm_medium=cpc&utm_campaign=post-op-beverly-hills`
 * **For Concierge Nursing Ads**:
-  `https://triciaconnollyrn.com/concierge.html?utm_source=meta&utm_medium=social&utm_campaign=vip-concierge-la`
+  `https://triciaconnollyrn.com/concierge?utm_source=meta&utm_medium=social&utm_campaign=vip-concierge-la`
 * **For IV/Palliative Care Ads**:
-  `https://triciaconnollyrn.com/iv-therapy.html?utm_source=google&utm_medium=cpc&utm_campaign=iv-hydration-wellness`
+  `https://triciaconnollyrn.com/iv-therapy?utm_source=google&utm_medium=cpc&utm_campaign=iv-hydration-wellness`
