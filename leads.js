@@ -203,6 +203,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Scroll Reveal for Sticky Book Now Button
+    const stickyBookBtn = document.getElementById('sticky-book-btn');
+    if (stickyBookBtn) {
+        function checkScroll() {
+            if (window.scrollY > 220) {
+                stickyBookBtn.classList.add('visible');
+            } else {
+                stickyBookBtn.classList.remove('visible');
+            }
+        }
+        
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(() => {
+                    checkScroll();
+                    scrollTimeout = null;
+                }, 60);
+            }
+        });
+        checkScroll();
+    }
+
     // Track all tel:, sms:, and mailto: link clicks globally on the page
     document.addEventListener('click', (e) => {
         const anchor = e.target.closest('a');
@@ -226,7 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (contactMethod) {
             // Determine position/type
             let position = 'general_link';
-            if (anchor.closest('header')) {
+            if (anchor.classList.contains('sticky-action-btn')) {
+                position = 'sticky_bar';
+            } else if (anchor.closest('header')) {
                 position = 'header';
             }
             
