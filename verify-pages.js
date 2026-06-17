@@ -83,6 +83,36 @@ locations.forEach((loc) => {
     console.error(`Error: ${filename} is missing structured JSON-LD schemas`);
     errors++;
   }
+
+  // 6. Verify Footer presence and token replacement
+  if (!content.includes('<footer class="site-footer">')) {
+    console.error(`Error: ${filename} is missing site footer`);
+    errors++;
+  }
+  if (content.includes('{{SITE_FOOTER}}')) {
+    console.error(`Error: ${filename} contains unreplaced {{SITE_FOOTER}} token`);
+    errors++;
+  }
+});
+
+// Verify main static pages have footer and no leftovers
+const staticFiles = ['index.html', 'post-op.html', 'concierge.html', 'iv-therapy.html'];
+staticFiles.forEach(file => {
+  const filePath = path.join(__dirname, file);
+  if (!fs.existsSync(filePath)) {
+    console.error(`Error: Static file does not exist: ${file}`);
+    errors++;
+    return;
+  }
+  const content = fs.readFileSync(filePath, 'utf8');
+  if (!content.includes('<footer class="site-footer">')) {
+    console.error(`Error: Static file ${file} is missing site footer`);
+    errors++;
+  }
+  if (content.includes('{{SITE_FOOTER}}')) {
+    console.error(`Error: Static file ${file} contains unreplaced {{SITE_FOOTER}} token`);
+    errors++;
+  }
 });
 
 console.log('--- VERIFICATION AUDIT COMPLETE ---');

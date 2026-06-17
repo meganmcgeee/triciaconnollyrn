@@ -21,6 +21,93 @@ const template = fs.readFileSync(templatePath, 'utf8');
 
 console.log(`Loaded ${locations.length} target locations.`);
 
+// Group locations by neighborhood for structured footer linking
+const groupedLocations = {};
+locations.forEach(loc => {
+  const nh = loc.neighborhood;
+  if (!groupedLocations[nh]) {
+    groupedLocations[nh] = [];
+  }
+  groupedLocations[nh].push(loc);
+});
+
+const sortedNeighborhoods = Object.keys(groupedLocations).sort();
+let footerGeoHTML = '';
+sortedNeighborhoods.forEach(nh => {
+  const locs = groupedLocations[nh];
+  locs.sort((a, b) => a.enclave.localeCompare(b.enclave));
+  
+  footerGeoHTML += `\n            <div class="geo-group">`;
+  footerGeoHTML += `\n                <h4 class="geo-group-title">${nh}</h4>`;
+  footerGeoHTML += `\n                <ul class="geo-group-links">`;
+  locs.forEach(loc => {
+    footerGeoHTML += `\n                    <li><a href="/${loc.slug}">${loc.enclave}</a></li>`;
+  });
+  footerGeoHTML += `\n                </ul>`;
+  footerGeoHTML += `\n            </div>`;
+});
+
+const currentYear = new Date().getFullYear();
+const siteFooterHTML = `
+        <footer class="site-footer">
+            <div class="footer-divider"></div>
+            <div class="footer-content">
+                <p class="footer-tagline">Tricia Connolly, RN &bull; Bespoke Concierge Nursing &amp; Private Duty Care</p>
+                
+                <div class="footer-contact-info">
+                    <span class="footer-loc">Beverly Hills &amp; Greater LA</span>
+                    <span class="footer-separator" aria-hidden="true">|</span>
+                    <a href="mailto:book@triciaconnollyrn.com" aria-label="Email Tricia Connolly at book@triciaconnollyrn.com">book@triciaconnollyrn.com</a>
+                    <span class="footer-separator" aria-hidden="true">|</span>
+                    <a href="tel:3108894846" aria-label="Call Tricia Connolly at 310-889-4846">(310) 889-4846</a>
+                </div>
+
+                <!-- Collapsible Geo-Targeted Service Areas -->
+                <div class="footer-geo-section">
+                    <details class="geo-details">
+                        <summary class="geo-summary">
+                            <span>Exclusive Los Angeles Service Areas</span>
+                            <svg class="geo-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                            </svg>
+                        </summary>
+                        <div class="geo-content">
+                            <p class="geo-intro">Providing professional private duty nursing, high-acuity postoperative recovery monitoring, and concierge wellness coordination directly in private residences and estates across these exclusive Southern California communities:</p>
+                            <div class="geo-groups-grid">${footerGeoHTML}
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <p class="footer-compliance">Professional nursing services are provided in strict accordance with the California Board of Registered Nursing. All care is delivered under the direction of the client's attending physician. Discretion and NDA-protected privacy are guaranteed.</p>
+                
+                <p class="footer-copyright">&copy; ${currentYear} Tricia Connolly, RN. All rights reserved.</p>
+            </div>
+        </footer>`;
+
+// Update static files with the new footer in-place
+const staticFiles = ['index.html', 'post-op.html', 'concierge.html', 'iv-therapy.html'];
+staticFiles.forEach(file => {
+  const filePath = path.join(__dirname, file);
+  if (fs.existsSync(filePath)) {
+    let content = fs.readFileSync(filePath, 'utf8');
+    const startTag = '<!-- SITE_FOOTER_START -->';
+    const endTag = '<!-- SITE_FOOTER_END -->';
+    const startIndex = content.indexOf(startTag);
+    const endIndex = content.indexOf(endTag);
+    
+    if (startIndex !== -1 && endIndex !== -1) {
+      const before = content.substring(0, startIndex + startTag.length);
+      const after = content.substring(endIndex);
+      content = before + '\n' + siteFooterHTML + '\n        ' + after;
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`Updated footer in: ${file}`);
+    } else {
+      console.warn(`Warning: Could not find footer placeholder tags in ${file}`);
+    }
+  }
+});
+
 const introTemplates = [
   "For high-profile individuals, executives, and families seeking clinical excellence without compromise, Tricia Connolly, RN offers a completely bespoke medical management service inside your residence or estate in {{ENCLAVE}}.",
   "Tricia Connolly, RN provides discrete private duty nursing and premium healthcare coordination for clients residing in the exclusive {{ENCLAVE}} community.",
@@ -152,6 +239,7 @@ locations.forEach((loc, index) => {
   pageContent = pageContent.replace(/{{CLINICAL_CONDITION}}/g, loc.clinicalCondition);
   pageContent = pageContent.replace(/{{PROCEDURE_FAQ_QUESTION}}/g, loc.procedureFAQQuestion);
   pageContent = pageContent.replace(/{{PROCEDURE_FAQ_ANSWER}}/g, loc.procedureFAQAnswer);
+  pageContent = pageContent.replace(/{{SITE_FOOTER}}/g, siteFooterHTML);
 
   // Write file
   const filename = `${loc.slug}.html`;
