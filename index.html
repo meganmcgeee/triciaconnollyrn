@@ -33,65 +33,102 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "Tricia Connolly, RN - Bespoke Concierge Nursing",
-      "image": "https://triciaconnollyrn.com/assets/post-op.png",
-      "@id": "https://triciaconnollyrn.com/#business",
-      "url": "https://triciaconnollyrn.com",
-      "telephone": "+1-310-889-4846",
-      "priceRange": "$$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Beverly Hills",
-        "addressLocality": "Los Angeles",
-        "addressRegion": "CA",
-        "postalCode": "90210",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 34.0736,
-        "longitude": -118.4004
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://github.com/meganmcgeee/triciaconnollyrn"
-      ],
-      "areaServed": [
+      "@graph": [
         {
-          "@type": "AdministrativeArea",
-          "name": "Beverly Hills"
+          "@type": "MedicalBusiness",
+          "@id": "https://triciaconnollyrn.com/#business",
+          "name": "Tricia Connolly, RN - Bespoke Concierge Nursing",
+          "image": "https://triciaconnollyrn.com/assets/concierge.png",
+          "logo": "https://triciaconnollyrn.com/assets/concierge.png",
+          "url": "https://triciaconnollyrn.com",
+          "telephone": "+1-310-889-4846",
+          "priceRange": "$$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Beverly Hills",
+            "addressLocality": "Los Angeles",
+            "addressRegion": "CA",
+            "postalCode": "90210",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0736,
+            "longitude": -118.4004
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "sameAs": [
+            "https://github.com/meganmcgeee/triciaconnollyrn"
+          ],
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Beverly Hills"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Bel Air"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Los Angeles"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Santa Monica"
+            }
+          ],
+          "medicalSpecialty": [
+            "Nursing",
+            "EmergencyMedicine",
+            "Surgery"
+          ]
         },
         {
-          "@type": "AdministrativeArea",
-          "name": "Bel Air"
+          "@type": "WebPage",
+          "@id": "https://triciaconnollyrn.com/#webpage",
+          "url": "https://triciaconnollyrn.com",
+          "name": "Tricia Connolly, RN | Bespoke Private Duty & Concierge Nursing Los Angeles",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "@id": "https://triciaconnollyrn.com/#primaryimage",
+            "url": "https://triciaconnollyrn.com/assets/concierge.png"
+          }
         },
         {
-          "@type": "AdministrativeArea",
-          "name": "Los Angeles"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Santa Monica"
+          "@type": "ProfilePage",
+          "@id": "https://triciaconnollyrn.com/#profile",
+          "url": "https://triciaconnollyrn.com",
+          "mainEntity": {
+            "@type": "Person",
+            "@id": "https://triciaconnollyrn.com/#person",
+            "name": "Tricia Connolly",
+            "jobTitle": "Registered Nurse",
+            "image": [
+              "https://triciaconnollyrn.com/assets/tricia-obscured.png"
+            ],
+            "description": "Tricia Connolly, RN is a registered nurse offering elite private duty nursing, post-operative surgical recovery, and home clinical care management in Beverly Hills, Bel Air, Santa Monica, and Greater Los Angeles.",
+            "sameAs": [
+              "https://github.com/meganmcgeee/triciaconnollyrn"
+            ],
+            "worksFor": {
+              "@id": "https://triciaconnollyrn.com/#business"
+            }
+          }
         }
-      ],
-      "medicalSpecialty": [
-        "Nursing",
-        "EmergencyMedicine",
-        "Surgery"
       ]
     }
     </script>

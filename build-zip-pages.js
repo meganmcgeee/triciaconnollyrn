@@ -155,6 +155,7 @@ locations.forEach((loc, index) => {
         "@id": "https://triciaconnollyrn.com/#business",
         "name": "Tricia Connolly, RN - Bespoke Concierge Nursing",
         "image": "https://triciaconnollyrn.com/assets/concierge.png",
+        "logo": "https://triciaconnollyrn.com/assets/concierge.png",
         "url": "https://triciaconnollyrn.com",
         "telephone": "+1-310-889-4846",
         "priceRange": "$$$$",
@@ -165,6 +166,17 @@ locations.forEach((loc, index) => {
           "addressRegion": "CA",
           "postalCode": loc.zip,
           "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `https://triciaconnollyrn.com/${loc.slug}#webpage`,
+        "url": `https://triciaconnollyrn.com/${loc.slug}`,
+        "name": `Private Duty Nursing & Concierge Care in ${loc.enclave} | Tricia Connolly, RN`,
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "@id": `https://triciaconnollyrn.com/${loc.slug}#primaryimage`,
+          "url": "https://triciaconnollyrn.com/assets/concierge.png"
         }
       },
       {
