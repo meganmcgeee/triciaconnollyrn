@@ -94,7 +94,7 @@ const siteFooterHTML = `
                 <p class="footer-tagline">Tricia Connolly, RN &bull; Bespoke Concierge Nursing &amp; Private Duty Care</p>
                 
                 <div class="footer-contact-info">
-                    <span class="footer-loc">Beverly Hills &amp; Greater LA</span>
+                    <span class="footer-loc">Beverly Hills, LA &amp; Orange County</span>
                     <span class="footer-separator" aria-hidden="true">|</span>
                     <a href="/locations" aria-label="View Service Locations">Locations Served</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
