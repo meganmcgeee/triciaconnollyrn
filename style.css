@@ -1650,7 +1650,7 @@ textarea {
 }
 
 .neighborhood-card-main a {
-    color: var(--text-secondary);
+    color: #e5e5e7; /* Highly readable light grey on dark background */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -1659,8 +1659,38 @@ textarea {
 }
 
 .neighborhood-card-main a:hover {
-    color: var(--text-primary);
+    color: var(--champagne); /* Transition to luxury gold on hover */
     padding-left: 4px;
+}
+
+/* Matrix Cards (B2B Partners Page) */
+.matrix-card {
+    background: rgba(176, 146, 106, 0.05); /* Light premium champagne tint */
+    border: 1px solid rgba(176, 146, 106, 0.18);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.matrix-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--champagne);
+    box-shadow: 0 8px 25px rgba(176, 146, 106, 0.08);
+}
+
+.matrix-card h3 {
+    color: var(--charcoal); /* Premium high-contrast header color */
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.matrix-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
 }
 
 .neighborhood-card-main a::after {
