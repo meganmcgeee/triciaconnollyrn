@@ -172,13 +172,19 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Submitting...</span>
         `;
 
+        const practiceEl = document.getElementById('lead-practice');
+        const specialtyEl = document.getElementById('lead-specialty');
+        const combinedMessage = (practiceEl ? `Practice: ${practiceEl.value.trim()}\n` : '') + 
+                                (specialtyEl ? `Professional Role: ${specialtyEl.value}\n` : '') + 
+                                messageVal;
+
         // Create data payload
         const payload = {
             name: nameVal,
             phone: phoneVal,
             email: emailVal,
             service: serviceVal,
-            message: messageVal,
+            message: combinedMessage,
             utm_source: utmSourceVal,
             utm_medium: utmMediumVal,
             utm_campaign: utmCampaignVal

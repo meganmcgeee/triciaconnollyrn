@@ -142,15 +142,15 @@
         <!-- Hero Section split -->
         <section class="landing-split" aria-label="Service Information">
             <div class="landing-content">
-                <p>
-                    For high-profile individuals, executives, and families seeking clinical excellence without compromise, Tricia Connolly, RN offers a completely bespoke medical management service inside your Beverly Hills, Bel Air, or Santa Monica estate.
+                 <p>
+                    For high-profile individuals, executives, and families seeking clinical excellence without compromise, Tricia Connolly, RN offers a completely bespoke medical management service inside your Beverly Hills, Bel Air, or Santa Monica estate, or during your stay at any luxury hotel in the area.
                 </p>
                 <p>
                     Operating under strict NDAs, Tricia integrates seamlessly into your household or private security detail to manage complex health parameters, coordinate directly with your West LA concierge physicians, and provide proactive preventative care.
                 </p>
                 <ul>
                     <li>Absolute privacy protection and extensive experience with celebrity and high-net-worth clientele.</li>
-                    <li>Tailored, comprehensive home wellness coordination and triage in private residences.</li>
+                    <li>Tailored, comprehensive home wellness coordination and triage in private residences, estates, and luxury hotels.</li>
                     <li>Travel companion nursing supporting domestic and international travel from LAX or private terminals.</li>
                     <li>Direct interfacing with premier specialists at Cedars-Sinai, UCLA Health, and exclusive local pharmacy networks.</li>
                 </ul>
@@ -165,31 +165,13 @@
         <section id="reviews-section" aria-labelledby="concierge-reviews-heading">
             <h2 id="concierge-reviews-heading">Verified Concierge Reviews</h2>
             
-            <div class="reviews-grid">
-                <!-- Seed Review 2 -->
-                <article class="review-card" aria-label="Testimonial by Anonymous Client">
-                    <div class="review-header">
-                        <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
-                            <svg class="star-filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
-                            <svg class="star-filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
-                            <svg class="star-filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
-                            <svg class="star-filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
-                            <svg class="star-filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
-                        </div>
-                        <span class="review-category-tag">Concierge Care</span>
-                    </div>
-                    <blockquote class="review-text">
-                        "Tricia has provided private duty nursing for my family during executive travels and at our Beverly Hills estate. Her nursing care is exceptional, but what sets her apart is her absolute discretion and ability to seamlessly interface with our team of specialists and West LA private physicians."
-                    </blockquote>
-                    <div class="review-footer">
-                        <span class="review-author">Anonymous &mdash; Beverly Hills, CA</span>
-                        <span class="review-verified">
-                            <svg class="review-verified-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            Verified Client
-                        </span>
-                        <span class="review-date">March 24, 2026</span>
-                    </div>
-                </article>
+            <div id="reviews-grid" class="reviews-grid" role="region" aria-live="polite">
+                <div class="loading-state">Loading verified client testimonials...</div>
+            </div>
+
+            <!-- Review Actions -->
+            <div class="reviews-actions">
+                <button id="btn-open-review" class="btn btn-secondary" aria-haspopup="dialog">Submit a Confidential Review</button>
             </div>
         </section>
 
@@ -283,6 +265,10 @@
                 
                 <div class="footer-contact-info">
                     <span class="footer-loc">Beverly Hills &amp; Greater LA</span>
+                    <span class="footer-separator" aria-hidden="true">|</span>
+                    <a href="/locations" aria-label="View Service Locations">Locations Served</a>
+                    <span class="footer-separator" aria-hidden="true">|</span>
+                    <a href="/partners" aria-label="B2B Partners and Referrals">Partners &amp; Referrals</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
                     <a href="mailto:book@triciaconnollyrn.com" aria-label="Email Tricia Connolly at book@triciaconnollyrn.com">book@triciaconnollyrn.com</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
@@ -460,7 +446,116 @@
         </a>
     </div>
 
-    <!-- Script file -->
+    <!-- Dialog for Adding a Review -->
+    <dialog id="review-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+        <div class="dialog-content">
+            <button class="close-dialog-btn" id="btn-close-review" aria-label="Close form">&times;</button>
+            
+            <h3 id="dialog-title">Submit Client Feedback</h3>
+            <p id="dialog-desc" class="dialog-desc">
+                Your experience is highly valued. Please share your feedback below. Your details will be displayed according to the privacy option selected.
+            </p>
+
+            <form id="review-form" method="dialog">
+                <!-- Star Rating Input -->
+                <div class="form-group">
+                    <label id="rating-label">Quality of Care Rating <span class="required" aria-hidden="true">*</span></label>
+                    <div class="star-rating-input" role="radiogroup" aria-labelledby="rating-label">
+                        <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="1 star" data-value="1">
+                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
+                        </button>
+                        <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="2 stars" data-value="2">
+                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
+                        </button>
+                        <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="3 stars" data-value="3">
+                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
+                        </button>
+                        <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="4 stars" data-value="4">
+                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
+                        </button>
+                        <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="5 stars" data-value="5">
+                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>
+                        </button>
+                    </div>
+                    <input type="hidden" id="review-rating" name="rating" required value="0">
+                    <span class="error-msg" id="error-rating" aria-live="polite"></span>
+                </div>
+
+                <!-- Care Category -->
+                <div class="form-group">
+                    <label for="review-category">Service Category <span class="required" aria-hidden="true">*</span></label>
+                    <select id="review-category" name="category" required>
+                        <option value="" disabled selected>Select the care service received</option>
+                        <option value="post-op">Post-Operative Recovery Monitoring</option>
+                        <option value="concierge">VIP Private Duty & Concierge Care</option>
+                        <option value="iv-palliative">Hospice, Palliative Care & IV Therapy</option>
+                        <option value="other">Other Medical Services</option>
+                    </select>
+                    <span class="error-msg" id="error-category" aria-live="polite"></span>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label for="review-text">Testimonial <span class="required" aria-hidden="true">*</span></label>
+                    <textarea id="review-text" name="text" rows="4" placeholder="Describe your experience with Tricia's care..." required></textarea>
+                    <span class="error-msg" id="error-text" aria-live="polite"></span>
+                </div>
+
+                <!-- Client Name -->
+                <div class="form-group">
+                    <label for="review-name">Your Name / Initials <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="review-name" name="name" placeholder="e.g. Evelyn S. or E.S." required>
+                    <span class="error-msg" id="error-name" aria-live="polite"></span>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group">
+                    <label for="review-location">Location (Optional)</label>
+                    <input type="text" id="review-location" name="location" placeholder="e.g. Beverly Hills, CA">
+                </div>
+
+                <!-- Privacy Settings -->
+                <div class="form-group form-privacy">
+                    <label>Privacy Setting <span class="required" aria-hidden="true">*</span></label>
+                    
+                    <div class="privacy-option">
+                        <input type="radio" id="privacy-initials" name="privacy" value="initials" checked required>
+                        <label for="privacy-initials">
+                            <strong>Display initials and location only</strong>
+                            <span class="privacy-desc">Displays as "V. S. — Beverly Hills, CA". High security, recommended.</span>
+                        </label>
+                    </div>
+                    
+                    <div class="privacy-option">
+                        <input type="radio" id="privacy-anonymous" name="privacy" value="anonymous">
+                        <label for="privacy-anonymous">
+                            <strong>Display anonymously</strong>
+                            <span class="privacy-desc">Displays as "Anonymous — Beverly Hills, CA". Complete confidentiality.</span>
+                        </label>
+                    </div>
+
+                    <div class="privacy-option">
+                        <input type="radio" id="privacy-full" name="privacy" value="full">
+                        <label for="privacy-full">
+                            <strong>Display full name</strong>
+                            <span class="privacy-desc">Displays as "Victoria Sinclair — Beverly Hills, CA". For clients comfortable sharing.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="btn-submit-review" class="btn btn-primary">Post Confidential Review</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-hidden="true">
+        <span class="toast-message">Review submitted successfully! Thank you for your feedback.</span>
+    </div>
+
+    <!-- Script files -->
     <script src="leads.js" defer></script>
+    <script src="app.js" defer></script>
 </body>
 </html>

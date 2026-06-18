@@ -57,6 +57,10 @@ const siteFooterHTML = `
                 <div class="footer-contact-info">
                     <span class="footer-loc">Beverly Hills &amp; Greater LA</span>
                     <span class="footer-separator" aria-hidden="true">|</span>
+                    <a href="/locations" aria-label="View Service Locations">Locations Served</a>
+                    <span class="footer-separator" aria-hidden="true">|</span>
+                    <a href="/partners" aria-label="B2B Partners and Referrals">Partners &amp; Referrals</a>
+                    <span class="footer-separator" aria-hidden="true">|</span>
                     <a href="mailto:book@triciaconnollyrn.com" aria-label="Email Tricia Connolly at book@triciaconnollyrn.com">book@triciaconnollyrn.com</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
                     <a href="tel:3108894846" aria-label="Call Tricia Connolly at 310-889-4846">(310) 889-4846</a>
@@ -86,7 +90,7 @@ const siteFooterHTML = `
         </footer>`;
 
 // Update static files with the new footer in-place
-const staticFiles = ['index.html', 'post-op.html', 'concierge.html', 'iv-therapy.html'];
+const staticFiles = ['index.html', 'post-op.html', 'concierge.html', 'iv-therapy.html', 'partners.html'];
 staticFiles.forEach(file => {
   const filePath = path.join(__dirname, file);
   if (fs.existsSync(filePath)) {
@@ -118,26 +122,26 @@ const introTemplates = [
 const bulletSets = [
   `<ul>
                     <li>Absolute privacy protection and extensive experience with celebrity and high-net-worth clientele.</li>
-                    <li>Tailored, comprehensive home wellness coordination and triage in private residences.</li>
+                    <li>Tailored, comprehensive clinical care in private estates, residences, and luxury hotel suites.</li>
                     <li>Postoperative transport and direct clinical discharge coordination from {{LOCAL_HOSPITAL}}.</li>
                     <li>Direct interfacing with premier specialists at Cedars-Sinai, UCLA Health, and exclusive local pharmacy networks.</li>
                 </ul>`,
   `<ul>
                     <li>Uncompromising privacy safeguards and extensive experience with high-profile clientele.</li>
-                    <li>Personalized home wellness plans and preventative clinical coordination.</li>
+                    <li>Personalized wellness plans and private duty nursing inside residences or luxury hotels.</li>
                     <li>Seamless discharge coordination and private medical transport from {{LOCAL_HOSPITAL}}.</li>
                     <li>Direct communication lines with top specialists at UCLA, Cedars-Sinai, and local clinical networks.</li>
                 </ul>`,
   `<ul>
-                    <li>Absolute confidentiality under strict NDAs for public figures and executives.</li>
+                    <li>Absolute confidentiality under strict NDAs in private residences, estates, or premier luxury hotels.</li>
                     <li>Comprehensive home health triage, clinical vitals monitoring, and medication management.</li>
                     <li>Post-surgical recovery oversight working closely with surgical teams at {{LOCAL_HOSPITAL}}.</li>
                     <li>Access to elite local pharmacy networks and expedited custom medicine deliveries.</li>
                 </ul>`,
   `<ul>
-                    <li>Discreet bedside manner tailored for high-security residences and gated estates.</li>
+                    <li>Discreet bedside manner tailored for high-security residences, gated estates, and luxury hotel rooms.</li>
                     <li>Preventative wellness checks, home IV hydration drips, and symptom management.</li>
-                    <li>Direct transport coordination and post-op care plans from {{LOCAL_HOSPITAL}}.</li>
+                    <li>Direct transport coordination and post-op care plans from {{LOCAL_HOSPITAL}} to home or hotel.</li>
                     <li>Liaison services connecting family offices, security details, and concierge physicians.</li>
                 </ul>`
 ];
@@ -385,6 +389,11 @@ let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://triciaconnollyrn.com/iv-therapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://triciaconnollyrn.com/partners</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`;

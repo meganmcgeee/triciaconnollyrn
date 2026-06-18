@@ -14,39 +14,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const starButtons = document.querySelectorAll('.star-btn');
     const ratingInput = document.getElementById('review-rating');
     const toast = document.getElementById('toast');
-    const toastMessage = toast.querySelector('.toast-message');
+    const toastMessage = toast ? toast.querySelector('.toast-message') : null;
 
-    // Default Seed Reviews
+    // Extract location context from data attributes on #main-content
+    const mainContent = document.getElementById('main-content');
+    const neighborhood = mainContent ? mainContent.getAttribute('data-neighborhood') : '';
+    const enclave = mainContent ? mainContent.getAttribute('data-enclave') : '';
+    const zipCode = mainContent ? mainContent.getAttribute('data-zip') : '';
+    const hospital = mainContent ? mainContent.getAttribute('data-hospital') : '';
+
+    // Default Seed Reviews with placeholders and default fallbacks
     const defaultReviews = [
         {
             id: 'seed-1',
             rating: 5,
             category: 'post-op',
-            text: "Following my complex reconstructive surgery at Cedars-Sinai, Tricia provided round-the-clock recovery monitoring at my Bel Air estate. Her clinical precision, proactive pain management, and absolute professionalism made my rehabilitation seamless. She is a top-tier nurse.",
+            text: "Following my complex reconstructive surgery at {{LOCAL_HOSPITAL}}, Tricia provided round-the-clock recovery monitoring at my {{ENCLAVE}} estate. Her clinical precision, proactive pain management, and absolute professionalism made my rehabilitation seamless. She is a top-tier nurse.",
             author: "H. K.",
-            location: "Bel Air, CA",
+            location: "{{NEIGHBORHOOD}}, CA",
             date: "May 12, 2026",
-            verified: true
+            verified: true,
+            defaults: {
+                enclave: "Bel Air",
+                neighborhood: "Bel Air",
+                hospital: "Cedars-Sinai"
+            }
         },
         {
             id: 'seed-2',
             rating: 5,
             category: 'concierge',
-            text: "Tricia has provided private duty nursing for my family during executive travels and at our Beverly Hills estate. Her nursing care is exceptional, but what sets her apart is her absolute discretion and ability to seamlessly interface with our team of specialists and West LA private physicians.",
+            text: "Tricia has provided private duty nursing for my family during executive travels and at our estate in {{ENCLAVE}}. Her nursing care is exceptional, but what sets her apart is her absolute discretion and ability to seamlessly interface with our team of specialists and private physicians near {{LOCAL_HOSPITAL}}.",
             author: "Anonymous",
-            location: "Beverly Hills, CA",
+            location: "{{NEIGHBORHOOD}}, CA",
             date: "Mar 24, 2026",
-            verified: true
+            verified: true,
+            defaults: {
+                enclave: "Beverly Hills",
+                neighborhood: "Beverly Hills",
+                hospital: "Cedars-Sinai"
+            }
         },
         {
             id: 'seed-3',
             rating: 5,
             category: 'iv-palliative',
-            text: "We brought Tricia in for in-home palliative support and custom IV hydration for our mother at her Santa Monica residence. Her compassionate bedside manner and profound dignity brought our family immense comfort. Her expertise in clinical symptom management is unparalleled.",
+            text: "We brought Tricia in for in-home palliative support and custom IV hydration for our mother at her {{ENCLAVE}} residence. Her compassionate bedside manner and profound dignity brought our family immense comfort. Her expertise in clinical symptom management is unparalleled.",
             author: "The L. Family",
-            location: "Santa Monica, CA",
+            location: "{{NEIGHBORHOOD}}, CA",
             date: "Apr 05, 2026",
-            verified: true
+            verified: true,
+            defaults: {
+                enclave: "Santa Monica",
+                neighborhood: "Santa Monica",
+                hospital: "UCLA Medical Center"
+            }
         }
     ];
 
@@ -55,10 +77,47 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!reviews || reviews.length === 0) {
         reviews = defaultReviews;
         localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
+    } else {
+        // Migration: Ensure seed reviews are updated to template-based versions
+        let updated = false;
+        defaultReviews.forEach(defRev => {
+            const index = reviews.findIndex(r => r.id === defRev.id);
+            if (index !== -1) {
+                if (!reviews[index].defaults) {
+                    reviews[index] = defRev;
+                    updated = true;
+                }
+            } else {
+                reviews.push(defRev);
+                updated = true;
+            }
+        });
+        if (updated) {
+            localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
+        }
+    }
+
+    // Determine default category based on page path and query parameters
+    function getDefaultCategory() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            if (serviceParam === 'post-op') return 'post-op';
+            if (serviceParam === 'iv' || serviceParam === 'iv-therapy') return 'iv-palliative';
+            if (serviceParam === 'b2b' || serviceParam === 'partner') return 'concierge';
+            return 'concierge';
+        }
+
+        const path = window.location.pathname.toLowerCase();
+        if (path.includes('post-op')) return 'post-op';
+        if (path.includes('iv-therapy')) return 'iv-palliative';
+        if (path.includes('concierge')) return 'concierge';
+        
+        return 'all';
     }
 
     // Active category for filtering
-    let activeCategory = 'all';
+    let activeCategory = getDefaultCategory();
 
     // SVG Star Icon Helper
     const getStarSVG = (isFilled) => {
@@ -72,8 +131,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Render Reviews
     function renderReviews() {
+        if (!reviewsGrid) return;
+
         // Clear grid
         reviewsGrid.innerHTML = '';
+
+        // Dynamically update section heading based on active category and location
+        const reviewsHeading = document.getElementById('concierge-reviews-heading') || 
+                               document.getElementById('postop-reviews-heading') || 
+                               document.getElementById('iv-reviews-heading') || 
+                               document.getElementById('reviews-heading');
+        if (reviewsHeading) {
+            const categoryTitles = {
+                'post-op': 'Verified Recovery Reviews',
+                'concierge': 'Verified Concierge Reviews',
+                'iv-palliative': 'Verified IV & Palliative Reviews',
+                'all': 'Client Testimonials'
+            };
+            const titleBase = categoryTitles[activeCategory] || 'Client Testimonials';
+            if (neighborhood) {
+                reviewsHeading.textContent = `${titleBase} for ${neighborhood}`;
+            } else {
+                reviewsHeading.textContent = titleBase;
+            }
+        }
 
         // Filter reviews
         const filteredReviews = activeCategory === 'all' 
@@ -110,10 +191,32 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             const categoryLabel = categoryLabels[review.category] || 'Specialized Care';
 
+            // Localize text & location if placeholders are present
+            let text = review.text;
+            let locationVal = review.location;
+
+            if (text.includes('{{') || (locationVal && locationVal.includes('{{'))) {
+                const enclaveVal = enclave || (review.defaults ? review.defaults.enclave : '');
+                const neighborhoodVal = neighborhood || (review.defaults ? review.defaults.neighborhood : '');
+                const hospitalVal = hospital || (review.defaults ? review.defaults.hospital : '');
+
+                text = text
+                    .replace(/{{ENCLAVE}}/g, enclaveVal)
+                    .replace(/{{NEIGHBORHOOD}}/g, neighborhoodVal)
+                    .replace(/{{LOCAL_HOSPITAL}}/g, hospitalVal);
+                
+                if (locationVal) {
+                    locationVal = locationVal
+                        .replace(/{{ENCLAVE}}/g, enclaveVal)
+                        .replace(/{{NEIGHBORHOOD}}/g, neighborhoodVal)
+                        .replace(/{{LOCAL_HOSPITAL}}/g, hospitalVal);
+                }
+            }
+
             // Author display logic
             let authorDisplay = review.author;
-            if (review.location) {
-                authorDisplay += ` &mdash; ${review.location}`;
+            if (locationVal) {
+                authorDisplay += ` &mdash; ${locationVal}`;
             }
 
             card.innerHTML = `
@@ -124,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="review-category-tag">${categoryLabel}</span>
                 </div>
                 <blockquote class="review-text">
-                    "${escapeHTML(review.text)}"
+                    "${escapeHTML(text)}"
                 </blockquote>
                 <div class="review-footer">
                     <span class="review-author">${authorDisplay}</span>
@@ -164,90 +267,122 @@ document.addEventListener('DOMContentLoaded', () => {
     renderReviews();
 
     // Category Filter Button Handlers
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Remove active class from all
-            filterButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-selected', 'false');
-            });
-
-            // Set current active
-            button.classList.add('active');
-            button.setAttribute('aria-selected', 'true');
-            activeCategory = button.getAttribute('data-category');
-
-            // Render
-            renderReviews();
-
-            // GA4 Google Analytics Event Logging
-            if (typeof gtag === 'function') {
-                gtag('event', 'filter_reviews', {
-                    'category': activeCategory
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Remove active class from all
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
                 });
-                console.log(`GA4: filter_reviews event logged for category "${activeCategory}"`);
-            }
+
+                // Set current active
+                button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+                activeCategory = button.getAttribute('data-category');
+
+                // Render
+                renderReviews();
+
+                // GA4 Google Analytics Event Logging
+                if (typeof gtag === 'function') {
+                    gtag('event', 'filter_reviews', {
+                        'category': activeCategory
+                    });
+                    console.log(`GA4: filter_reviews event logged for category "${activeCategory}"`);
+                }
+            });
         });
-    });
+    }
 
     // Dialog Event Handlers
-    openDialogBtn.addEventListener('click', () => {
-        resetForm();
-        reviewDialog.showModal();
-    });
+    if (openDialogBtn && reviewDialog) {
+        openDialogBtn.addEventListener('click', () => {
+            resetForm();
+            
+            // Pre-select category based on active category
+            const categorySelect = document.getElementById('review-category');
+            if (categorySelect) {
+                const defaultCat = getDefaultCategory();
+                if (defaultCat !== 'all') {
+                    categorySelect.value = defaultCat;
+                }
+            }
+            
+            // Pre-fill location if neighborhood context is available
+            const locationInput = document.getElementById('review-location');
+            if (locationInput && neighborhood) {
+                locationInput.value = `${neighborhood}, CA`;
+            }
+            
+            reviewDialog.showModal();
+        });
+    }
 
-    closeDialogBtn.addEventListener('click', () => {
-        reviewDialog.close();
-    });
+    if (closeDialogBtn && reviewDialog) {
+        closeDialogBtn.addEventListener('click', () => {
+            reviewDialog.close();
+        });
+    }
 
     // Close on backdrop click
-    reviewDialog.addEventListener('click', (e) => {
-        const rect = reviewDialog.getBoundingClientRect();
-        const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
-            rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
-        if (!isInDialog) {
-            reviewDialog.close();
-        }
-    });
+    if (reviewDialog) {
+        reviewDialog.addEventListener('click', (e) => {
+            const rect = reviewDialog.getBoundingClientRect();
+            const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+                rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+            if (!isInDialog) {
+                reviewDialog.close();
+            }
+        });
+    }
 
     // Interactive Star Rating Form Selection
-    starButtons.forEach(button => {
-        // Mouse hover preview
-        button.addEventListener('mouseenter', () => {
-            const hoverValue = parseInt(button.getAttribute('data-value'));
-            highlightStarsPreview(hoverValue);
-        });
-
-        // Click selection
-        button.addEventListener('click', () => {
-            const selectValue = parseInt(button.getAttribute('data-value'));
-            ratingInput.value = selectValue;
-            highlightStarsSelected(selectValue);
-            
-            // Set accessibility attributes
-            starButtons.forEach((btn, idx) => {
-                btn.setAttribute('aria-checked', idx < selectValue ? 'true' : 'false');
+    if (starButtons.length > 0) {
+        starButtons.forEach(button => {
+            // Mouse hover preview
+            button.addEventListener('mouseenter', () => {
+                const hoverValue = parseInt(button.getAttribute('data-value'));
+                highlightStarsPreview(hoverValue);
             });
-            
-            // Clear error if set
-            hideError('rating');
+
+            // Click selection
+            button.addEventListener('click', () => {
+                const selectValue = parseInt(button.getAttribute('data-value'));
+                if (ratingInput) ratingInput.value = selectValue;
+                highlightStarsSelected(selectValue);
+                
+                // Set accessibility attributes
+                starButtons.forEach((btn, idx) => {
+                    btn.setAttribute('aria-checked', idx < selectValue ? 'true' : 'false');
+                });
+                
+                // Clear error if set
+                hideError('rating');
+            });
         });
-    });
+    }
 
     // Reset star highlights on mouse leave
     const starRatingContainer = document.querySelector('.star-rating-input');
-    starRatingContainer.addEventListener('mouseleave', () => {
-        const currentValue = parseInt(ratingInput.value);
-        highlightStarsSelected(currentValue);
-    });
+    if (starRatingContainer) {
+        starRatingContainer.addEventListener('mouseleave', () => {
+            if (ratingInput) {
+                const currentValue = parseInt(ratingInput.value);
+                highlightStarsSelected(currentValue);
+            }
+        });
+    }
 
     function highlightStarsPreview(value) {
         starButtons.forEach((btn, idx) => {
             const icon = btn.querySelector('.star-icon');
-            if (idx < value) {
-                icon.style.fill = 'var(--champagne)';
-            } else {
-                icon.style.fill = '#e0deda';
+            if (icon) {
+                if (idx < value) {
+                    icon.style.fill = 'var(--champagne)';
+                } else {
+                    icon.style.fill = '#e0deda';
+                }
             }
         });
     }
@@ -255,12 +390,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function highlightStarsSelected(value) {
         starButtons.forEach((btn, idx) => {
             const icon = btn.querySelector('.star-icon');
-            if (idx < value) {
-                btn.classList.add('selected');
-                icon.style.fill = 'var(--champagne)';
-            } else {
-                btn.classList.remove('selected');
-                icon.style.fill = '#e0deda';
+            if (icon) {
+                if (idx < value) {
+                    btn.classList.add('selected');
+                    icon.style.fill = 'var(--champagne)';
+                } else {
+                    btn.classList.remove('selected');
+                    icon.style.fill = '#e0deda';
+                }
             }
         });
     }
@@ -274,6 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Hide error
     function hideError(fieldId) {
         const errorSpan = document.getElementById(`error-${fieldId}`);
         if (errorSpan) {
@@ -284,8 +422,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reset Form State
     function resetForm() {
+        if (!reviewForm) return;
         reviewForm.reset();
-        ratingInput.value = 0;
+        if (ratingInput) ratingInput.value = 0;
         highlightStarsSelected(0);
         
         starButtons.forEach(btn => {
@@ -306,7 +445,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (privacySetting === 'initials') {
-            // Split by space/hyphens/dots
             const parts = cleanName.split(/[\s.\-_]+/);
             const initials = parts
                 .filter(part => part.length > 0)
@@ -315,104 +453,106 @@ document.addEventListener('DOMContentLoaded', () => {
             return initials ? `${initials}.` : 'Client';
         }
 
-        // Return full name formatted nicely
         return cleanName;
     }
 
     // Form Submit Handler
-    reviewForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        // 1. Extract values
-        const ratingVal = parseInt(ratingInput.value);
-        const categoryVal = document.getElementById('review-category').value;
-        const textVal = document.getElementById('review-text').value.trim();
-        const nameVal = document.getElementById('review-name').value.trim();
-        const locationVal = document.getElementById('review-location').value.trim();
-        const privacyVal = document.querySelector('input[name="privacy"]:checked').value;
+            // 1. Extract values
+            const ratingVal = ratingInput ? parseInt(ratingInput.value) : 0;
+            const categoryVal = document.getElementById('review-category')?.value;
+            const textVal = document.getElementById('review-text')?.value.trim() || '';
+            const nameVal = document.getElementById('review-name')?.value.trim() || '';
+            const locationInputVal = document.getElementById('review-location')?.value.trim() || '';
+            const privacyEl = document.querySelector('input[name="privacy"]:checked');
+            const privacyVal = privacyEl ? privacyEl.value : 'initials';
 
-        // 2. Client Side Validation
-        let isValid = true;
+            // 2. Client Side Validation
+            let isValid = true;
 
-        if (ratingVal === 0) {
-            showError('rating', 'Please select a star rating (1 to 5).');
-            isValid = false;
-        } else {
-            hideError('rating');
-        }
+            if (ratingVal === 0) {
+                showError('rating', 'Please select a star rating (1 to 5).');
+                isValid = false;
+            } else {
+                hideError('rating');
+            }
 
-        if (!categoryVal) {
-            showError('category', 'Please select a service category.');
-            isValid = false;
-        } else {
-            hideError('category');
-        }
+            if (!categoryVal) {
+                showError('category', 'Please select a service category.');
+                isValid = false;
+            } else {
+                hideError('category');
+            }
 
-        if (textVal.length < 10) {
-            showError('text', 'Testimonial is too short. Please provide a brief description (min 10 characters).');
-            isValid = false;
-        } else {
-            hideError('text');
-        }
+            if (textVal.length < 10) {
+                showError('text', 'Testimonial is too short. Please provide a brief description (min 10 characters).');
+                isValid = false;
+            } else {
+                hideError('text');
+            }
 
-        if (nameVal.length === 0) {
-            showError('name', 'Name or initials is required.');
-            isValid = false;
-        } else {
-            hideError('name');
-        }
+            if (nameVal.length === 0) {
+                showError('name', 'Name or initials is required.');
+                isValid = false;
+            } else {
+                hideError('name');
+            }
 
-        if (!isValid) {
-            return; // Halt if validation fails
-        }
+            if (!isValid) {
+                return;
+            }
 
-        // 3. Process Author Name based on privacy settings
-        const formattedAuthor = formatAuthor(nameVal, privacyVal);
+            // 3. Process Author Name based on privacy settings
+            const formattedAuthor = formatAuthor(nameVal, privacyVal);
 
-        // 4. Create new review object
-        const newReview = {
-            id: 'user-' + Date.now(),
-            rating: ratingVal,
-            category: categoryVal,
-            text: textVal,
-            author: formattedAuthor,
-            location: locationVal || null,
-            date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
-            verified: true // Mark as verified since it represents client-initiated feedback
-        };
+            // 4. Create new review object
+            const newReview = {
+                id: 'user-' + Date.now(),
+                rating: ratingVal,
+                category: categoryVal,
+                text: textVal,
+                author: formattedAuthor,
+                location: locationInputVal || null,
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+                verified: true
+            };
 
-        // 5. Update reviews array
-        reviews.unshift(newReview); // Prepend to the top of list
-        localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
+            // 5. Update reviews array
+            reviews.unshift(newReview);
+            localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
 
-        // 6. Update view
-        renderReviews();
+            // 6. Update view
+            renderReviews();
 
-        // GA4 Google Analytics Event Logging
-        if (typeof gtag === 'function') {
-            gtag('event', 'submit_review', {
-                'category': categoryVal,
-                'privacy_setting': privacyVal,
-                'rating': ratingVal
-            });
-            console.log(`GA4: submit_review event logged (category: "${categoryVal}", privacy: "${privacyVal}", rating: ${ratingVal})`);
-        }
+            // GA4 Google Analytics Event Logging
+            if (typeof gtag === 'function') {
+                gtag('event', 'submit_review', {
+                    'category': categoryVal,
+                    'privacy_setting': privacyVal,
+                    'rating': ratingVal
+                });
+                console.log(`GA4: submit_review event logged (category: "${categoryVal}", privacy: "${privacyVal}", rating: ${ratingVal})`);
+            }
 
-        // 7. Success toast notification
-        showToast(`Testimonial submitted successfully under "${privacyVal}" privacy setting.`);
+            // 7. Success toast notification
+            showToast(`Testimonial submitted successfully under "${privacyVal}" privacy setting.`);
 
-        // 8. Close and clean up
-        reviewDialog.close();
-        resetForm();
-    });
+            // 8. Close and clean up
+            if (reviewDialog) reviewDialog.close();
+            resetForm();
+        });
+    }
 
     // Show Toast Helper
     function showToast(message) {
+        if (!toast || !toastMessage) return;
         toastMessage.textContent = message;
         toast.classList.add('show');
         toast.setAttribute('aria-hidden', 'false');
 
-        // Automatically hide toast
         setTimeout(() => {
             toast.classList.remove('show');
             toast.setAttribute('aria-hidden', 'true');
@@ -423,6 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickyBookBtn = document.getElementById('sticky-book-btn');
     
     function checkScroll() {
+        if (!stickyBookBtn) return;
         if (window.scrollY > 220) {
             stickyBookBtn.classList.add('visible');
         } else {
@@ -430,7 +571,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Throttle scroll handler for performance
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         if (!scrollTimeout) {
@@ -441,7 +581,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Initial check in case they refresh while scrolled down
     checkScroll();
 
     // Track all tel:, sms:, and mailto: link clicks globally on the page
@@ -465,7 +604,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (contactMethod) {
-            // Determine position/type
             let position = 'general_link';
             if (anchor.classList.contains('sticky-action-btn')) {
                 position = 'sticky_bar';
@@ -483,7 +621,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    // 4. Global Contact Clicks tracking completed
 });
-
