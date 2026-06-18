@@ -95,9 +95,15 @@ locations.forEach((loc) => {
     console.error(`Error: ${filename} contains unreplaced {{SITE_FOOTER}} token`);
     errors++;
   }
+
+  // 7. Verify Navigation Menu presence
+  if (!content.includes('class="site-nav"')) {
+    console.error(`Error: ${filename} is missing site navigation menu`);
+    errors++;
+  }
 });
 
-// Verify main static pages have footer and no leftovers
+// Verify main static pages have footer and navigation
 const staticFiles = ['index.html', 'locations.html', 'post-op.html', 'concierge.html', 'iv-therapy.html', 'partners.html'];
 staticFiles.forEach(file => {
   const filePath = path.join(__dirname, file);
@@ -113,6 +119,10 @@ staticFiles.forEach(file => {
   }
   if (content.includes('{{SITE_FOOTER}}')) {
     console.error(`Error: Static file ${file} contains unreplaced {{SITE_FOOTER}} token`);
+    errors++;
+  }
+  if (!content.includes('class="site-nav"')) {
+    console.error(`Error: Static file ${file} is missing site navigation menu`);
     errors++;
   }
 });

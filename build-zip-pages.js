@@ -5,6 +5,7 @@ const path = require('path');
 const locationsPath = path.join(__dirname, 'locations.json');
 const templatePath = path.join(__dirname, 'local-seo-template.html');
 const sitemapPath = path.join(__dirname, 'sitemap.xml');
+const navPath = path.join(__dirname, 'nav.html');
 
 // Load files
 if (!fs.existsSync(locationsPath)) {
@@ -15,6 +16,44 @@ if (!fs.existsSync(templatePath)) {
   console.error('Error: local-seo-template.html not found!');
   process.exit(1);
 }
+if (!fs.existsSync(navPath)) {
+  console.error('Error: nav.html not found!');
+  process.exit(1);
+}
+
+const navHTML = fs.readFileSync(navPath, 'utf8').trim();
+
+// Update navigation menu in-place in all source files
+const filesWithNav = [
+  'index.html',
+  'post-op.html',
+  'concierge.html',
+  'iv-therapy.html',
+  'partners.html',
+  'locations-template.html',
+  'local-seo-template.html'
+];
+
+filesWithNav.forEach(file => {
+  const filePath = path.join(__dirname, file);
+  if (fs.existsSync(filePath)) {
+    let content = fs.readFileSync(filePath, 'utf8');
+    const startTag = '<!-- SITE_NAV_START -->';
+    const endTag = '<!-- SITE_NAV_END -->';
+    const startIndex = content.indexOf(startTag);
+    const endIndex = content.indexOf(endTag);
+    
+    if (startIndex !== -1 && endIndex !== -1) {
+      const before = content.substring(0, startIndex + startTag.length);
+      const after = content.substring(endIndex);
+      content = before + '\n' + navHTML + '\n        ' + after;
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`Updated navigation menu in: ${file}`);
+    } else {
+      console.warn(`Warning: Could not find navigation placeholder tags in ${file}`);
+    }
+  }
+});
 
 const locations = JSON.parse(fs.readFileSync(locationsPath, 'utf8'));
 const template = fs.readFileSync(templatePath, 'utf8');

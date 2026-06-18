@@ -621,4 +621,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // ==========================================================================
+    // Interactive Menu Navigation Toggles
+    // ==========================================================================
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdownTrigger = document.querySelector('.dropdown-trigger');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !expanded);
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    if (dropdownTrigger && dropdownMenu) {
+        dropdownTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const expanded = dropdownTrigger.getAttribute('aria-expanded') === 'true';
+            dropdownTrigger.setAttribute('aria-expanded', !expanded);
+            dropdownMenu.classList.toggle('active');
+        });
+    }
+
+    // Close menu or dropdown if user clicks outside
+    document.addEventListener('click', () => {
+        if (navToggle && navLinks && navLinks.classList.contains('active')) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+        if (dropdownTrigger && dropdownMenu && dropdownMenu.classList.contains('active')) {
+            dropdownTrigger.setAttribute('aria-expanded', 'false');
+            dropdownMenu.classList.remove('active');
+        }
+    });
+
+    // Prevent closing menu when clicking inside the navigation elements
+    if (navLinks) {
+        navLinks.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
 });
