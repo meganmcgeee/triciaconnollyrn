@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 leadServiceInput.value = leadServiceInput.value.replace('concierge-', 'b2b-');
             }
             if (specialtyBox) {
-                specialtyBox.innerHTML = `<strong>Clinical Collaboration &amp; Compliance:</strong> Tricia operates under the strict direction of your client's attending physician or surgeon, providing detailed logging (vitals, wound progression, drain output) and direct reporting compliance.`;
+                specialtyBox.innerHTML = `<strong>Surgicenter &amp; Hospital Transitions:</strong> Tricia coordinates seamless discharge pick-up and continuity of clinical care from outpatient surgical suites (Lasky Clinic, Beverly Hills Surgery Center, Linden Surgical Center, Bedford Surgical Center) as well as major clinical hospitals (Cedars-Sinai, UCLA Health) directly to your private home, estate, or luxury hotel suite in ${locationName}. All care is executed under NDA and in absolute compliance with the attending physician's post-op orders.`;
             }
             if (formHeading) {
                 formHeading.textContent = "Request Partnership Details / Refer a Client";
