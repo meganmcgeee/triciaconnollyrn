@@ -23,6 +23,7 @@ let errors = 0;
 // Verify Sitemap has basic entries
 const mainUrls = [
   'https://triciaconnollyrn.com/',
+  'https://triciaconnollyrn.com/locations',
   'https://triciaconnollyrn.com/concierge',
   'https://triciaconnollyrn.com/post-op',
   'https://triciaconnollyrn.com/iv-therapy'
@@ -96,7 +97,7 @@ locations.forEach((loc) => {
 });
 
 // Verify main static pages have footer and no leftovers
-const staticFiles = ['index.html', 'post-op.html', 'concierge.html', 'iv-therapy.html'];
+const staticFiles = ['index.html', 'locations.html', 'post-op.html', 'concierge.html', 'iv-therapy.html'];
 staticFiles.forEach(file => {
   const filePath = path.join(__dirname, file);
   if (!fs.existsSync(filePath)) {

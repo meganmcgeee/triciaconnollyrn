@@ -1589,3 +1589,96 @@ textarea {
         padding: 0 16px 20px 16px;
     }
 }
+
+/* Locations Directory Page */
+.locations-container {
+    padding: 20px 0;
+}
+
+.locations-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.locations-grid-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.neighborhood-card-main {
+    background: linear-gradient(145deg, #2c2c2e, #1c1c1e);
+    border: 1px solid rgba(176, 146, 106, 0.15);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-medium), border-color var(--transition-medium);
+}
+
+.neighborhood-card-main:hover {
+    transform: translateY(-4px);
+    border-color: var(--champagne);
+}
+
+.neighborhood-card-main h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--champagne);
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(176, 146, 106, 0.25);
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.neighborhood-card-main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.neighborhood-card-main li {
+    font-size: 0.95rem;
+}
+
+.neighborhood-card-main a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.neighborhood-card-main a:hover {
+    color: var(--text-primary);
+    padding-left: 4px;
+}
+
+.neighborhood-card-main a::after {
+    content: "→";
+    font-size: 1.1rem;
+    color: var(--champagne);
+    opacity: 0.6;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.neighborhood-card-main a:hover::after {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .locations-grid-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

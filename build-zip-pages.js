@@ -72,7 +72,7 @@ const siteFooterHTML = `
                             </svg>
                         </summary>
                         <div class="geo-content">
-                            <p class="geo-intro">Providing professional private duty nursing, high-acuity postoperative recovery monitoring, and concierge wellness coordination directly in private residences and estates across these exclusive Southern California communities:</p>
+                            <p class="geo-intro">Providing professional private duty nursing, high-acuity postoperative recovery monitoring, and concierge wellness coordination directly in private residences and estates across these exclusive Southern California communities. View our full <a href="/locations" style="color:var(--champagne); text-decoration:underline;">Locations Index</a> or explore the individual enclaves below:</p>
                             <div class="geo-groups-grid">${footerGeoHTML}
                             </div>
                         </div>
@@ -267,6 +267,99 @@ locations.forEach((loc, index) => {
   generatedSlugs.push(loc.slug);
 });
 
+// Generate locations.html from template
+const locationsTemplatePath = path.join(__dirname, 'locations-template.html');
+if (fs.existsSync(locationsTemplatePath)) {
+  const locationsTemplate = fs.readFileSync(locationsTemplatePath, 'utf8');
+  
+  // Build main grid HTML
+  let mainGridHTML = '';
+  sortedNeighborhoods.forEach(nh => {
+    const locs = groupedLocations[nh];
+    locs.sort((a, b) => a.enclave.localeCompare(b.enclave));
+    
+    mainGridHTML += `\n            <div class="neighborhood-card-main">`;
+    mainGridHTML += `\n                <h3>${nh}</h3>`;
+    mainGridHTML += `\n                <ul>`;
+    locs.forEach(loc => {
+      mainGridHTML += `\n                    <li><a href="/${loc.slug}">${loc.enclave}</a></li>`;
+    });
+    mainGridHTML += `\n                </ul>`;
+    mainGridHTML += `\n            </div>`;
+  });
+
+  // Build locations page schema
+  const locationsSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://triciaconnollyrn.com/#business",
+        "name": "Tricia Connolly, RN - Bespoke Concierge Nursing",
+        "image": "https://triciaconnollyrn.com/assets/concierge.png",
+        "logo": "https://triciaconnollyrn.com/assets/concierge.png",
+        "url": "https://triciaconnollyrn.com",
+        "telephone": "+1-310-889-4846",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Beverly Hills",
+          "addressLocality": "Los Angeles",
+          "addressRegion": "CA",
+          "postalCode": "90210",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://triciaconnollyrn.com/locations#webpage",
+        "url": "https://triciaconnollyrn.com/locations",
+        "name": "Service Locations & Areas Served | Tricia Connolly, RN",
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "@id": "https://triciaconnollyrn.com/locations#primaryimage",
+          "url": "https://triciaconnollyrn.com/assets/concierge.png"
+        },
+        "reviewedBy": {
+          "@type": "Person",
+          "name": "Tricia Connolly, RN",
+          "jobTitle": "Registered Nurse"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://triciaconnollyrn.com/locations#itemlist",
+        "name": "Los Angeles Private Duty Nursing Locations",
+        "numberOfItems": locations.length,
+        "itemListElement": locations.map((loc, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "url": `https://triciaconnollyrn.com/${loc.slug}`,
+          "name": `${loc.enclave} Concierge Nursing Care`
+        }))
+      }
+    ]
+  };
+
+  const locationsSchemaMarkup = `<script type="application/ld+json">\n    ${JSON.stringify(locationsSchema, null, 2).replace(/\n/g, '\n    ')}\n    </script>`;
+
+  let locationsContent = locationsTemplate;
+  locationsContent = locationsContent.replace(/{{SCHEMA_MARKUP}}/g, locationsSchemaMarkup);
+  locationsContent = locationsContent.replace(/{{LOCATIONS_GRID}}/g, mainGridHTML);
+  
+  if (locationsContent.includes('<!-- SITE_FOOTER_START -->')) {
+    const startTag = '<!-- SITE_FOOTER_START -->';
+    const endTag = '<!-- SITE_FOOTER_END -->';
+    const startIdx = locationsContent.indexOf(startTag);
+    const endIdx = locationsContent.indexOf(endTag);
+    locationsContent = locationsContent.substring(0, startIdx + startTag.length) + '\n' + siteFooterHTML + '\n        ' + locationsContent.substring(endIdx);
+  }
+
+  const locationsOutputPath = path.join(__dirname, 'locations.html');
+  fs.writeFileSync(locationsOutputPath, locationsContent, 'utf8');
+  console.log('Generated: locations.html');
+}
+
 // Generate sitemap.xml
 let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -274,6 +367,11 @@ let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>https://triciaconnollyrn.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://triciaconnollyrn.com/locations</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://triciaconnollyrn.com/concierge</loc>

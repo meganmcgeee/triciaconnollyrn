@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Locations & Areas Served | Tricia Connolly, RN</title>
+    <meta name="description" content="Explore Tricia Connolly, RN's exclusive Los Angeles service areas, including Beverly Hills, Malibu, Santa Monica, Bel Air, Brentwood, and Palos Verdes. Bespoke private duty nursing and postoperative monitoring.">
+    <meta name="keywords" content="private duty nurse Beverly Hills, concierge nurse Los Angeles, postoperative care locations, service areas nurse LA, Tricia Connolly RN locations">
+    <meta name="author" content="Tricia Connolly, RN">
+
+    <!-- Open Graph (For rich social previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://triciaconnollyrn.com/locations">
+    <meta property="og:site_name" content="Tricia Connolly, RN - Bespoke Concierge Nursing">
+    <meta property="og:title" content="Service Locations & Areas Served | Tricia Connolly, RN">
+    <meta property="og:description" content="Explore Tricia Connolly, RN's exclusive Los Angeles service areas, including Beverly Hills, Malibu, Santa Monica, Bel Air, Brentwood, and Palos Verdes.">
+    <meta property="og:image" content="https://triciaconnollyrn.com/assets/concierge.png">
+
+    <!-- Twitter (For rich previews on X) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://triciaconnollyrn.com/locations">
+    <meta property="twitter:title" content="Service Locations & Areas Served | Tricia Connolly, RN">
+    <meta property="twitter:description" content="Explore Tricia Connolly, RN's exclusive Los Angeles service areas, including Beverly Hills, Malibu, Santa Monica, Bel Air, Brentwood, and Palos Verdes.">
+    <meta property="twitter:image" content="https://triciaconnollyrn.com/assets/concierge.png">
+
+    <!-- JSON-LD Structured Data (Dynamic) -->
+    {{SCHEMA_MARKUP}}
+
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E703GBGQLN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E703GBGQLN');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="card" id="main-content">
+        
+        <header>
+            <a href="/" class="back-link" aria-label="Go back to main portfolio">&larr; Back to Portfolio</a>
+            <h1>Service Locations</h1>
+            <div class="subtitle">Exclusive Los Angeles Neighborhoods &amp; Enclaves</div>
+        </header>
+
+        <section class="locations-container" aria-label="Coverage areas introduction">
+            <div class="locations-intro">
+                <p>
+                    Tricia Connolly, RN offers a completely bespoke medical management service inside your residence, hotel, or estate. Operating with absolute confidentiality under strict NDAs, Tricia provides dedicated bedside care across these premier Southern California communities:
+                </p>
+            </div>
+
+            <!-- Programmatic Locations Grid -->
+            <div class="locations-grid-main">
+                {{LOCATIONS_GRID}}
+            </div>
+        </section>
+
+        <!-- Static Lead Capture Container -->
+        <section class="lead-form-box" aria-labelledby="form-heading">
+            <div id="form-container">
+                <h3 id="form-heading">Request Private Consultation</h3>
+                <p>Submit your request confidentially. All client inquiries are handled with strict privacy.</p>
+                
+                <form id="lead-form">
+                    <!-- Hidden inputs for tracking -->
+                    <input type="hidden" id="lead-service" name="service" value="locations-index">
+                    <input type="hidden" id="utm_source" name="utm_source" value="direct">
+                    <input type="hidden" id="utm_medium" name="utm_medium" value="">
+                    <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+
+                    <!-- Form fields -->
+                    <div class="form-group">
+                        <label for="lead-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="lead-name" name="name" placeholder="Victoria Sinclair" required>
+                        <span class="error-msg" id="error-name" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead-phone">Phone Number <span class="required">*</span></label>
+                        <input type="text" id="lead-phone" name="phone" placeholder="(310) 555-0199" required>
+                        <span class="error-msg" id="error-phone" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead-email">Email Address <span class="required">*</span></label>
+                        <input type="text" id="lead-email" name="email" placeholder="victoria@example.com" required>
+                        <span class="error-msg" id="error-email" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead-message">Tell us about your needs (Optional)</label>
+                        <textarea id="lead-message" name="message" rows="3" placeholder="Briefly describe the care requirements, timeline, or special considerations."></textarea>
+                    </div>
+
+                    <span class="submit-error-span" id="error-submit" aria-live="polite"></span>
+
+                    <button type="submit" id="btn-submit-lead" class="btn btn-primary">Submit Private Inquiry</button>
+                </form>
+            </div>
+
+            <!-- Success State Message -->
+            <div id="success-container" class="success-box" style="display: none;">
+                <div class="success-icon-wrap">
+                    <svg class="success-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <h3 class="success-title">Submission Successful</h3>
+                <p class="success-desc">
+                    Tricia has received your private inquiry. She will review your details and contact you directly within 2 hours to coordinate your care plan.
+                </p>
+                <a href="/" class="btn btn-secondary" style="max-width: 250px; margin: 0 auto;">Return to Home</a>
+            </div>
+        </section>
+
+        <!-- SITE_FOOTER_START -->
+        <!-- SITE_FOOTER_END -->
+
+    </main>
+
+    <!-- Sticky Book/Inquiry Actions -->
+    <div id="sticky-book-btn" class="sticky-book-btn-container" aria-label="Contact Tricia Connolly">
+        <a href="sms:3108894846?body=Hi%20Tricia%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services.%20Thank%20you%21" class="sticky-action-btn sms-action" aria-label="Send SMS to Tricia Connolly">
+            <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+            </svg>
+            <span>Text</span>
+        </a>
+        <span class="action-divider" aria-hidden="true"></span>
+        <a href="tel:3108894846" class="sticky-action-btn call-action" aria-label="Call Tricia Connolly">
+            <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <span>Call</span>
+        </a>
+    </div>
+
+    <!-- Script file -->
+    <script src="leads.js" defer></script>
+</body>
+</html>
