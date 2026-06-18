@@ -169,7 +169,7 @@ locations.forEach((loc, index) => {
         }
       },
       {
-        "@type": "WebPage",
+        "@type": "MedicalWebPage",
         "@id": `https://triciaconnollyrn.com/${loc.slug}#webpage`,
         "url": `https://triciaconnollyrn.com/${loc.slug}`,
         "name": `Private Duty Nursing & Concierge Care in ${loc.enclave} | Tricia Connolly, RN`,
@@ -177,6 +177,11 @@ locations.forEach((loc, index) => {
           "@type": "ImageObject",
           "@id": `https://triciaconnollyrn.com/${loc.slug}#primaryimage`,
           "url": "https://triciaconnollyrn.com/assets/concierge.png"
+        },
+        "reviewedBy": {
+          "@type": "Person",
+          "name": "Tricia Connolly, RN",
+          "jobTitle": "Registered Nurse"
         }
       },
       {
