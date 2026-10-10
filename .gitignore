@@ -8,3 +8,5 @@ node_modules/
 
 # Ignore generated sitemap
 sitemap.xml
+.vercel
+.env*
