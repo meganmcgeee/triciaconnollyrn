@@ -1,4 +1,4 @@
-/* CSS Design System for Tricia Connolly, RN */
+/* CSS Design System for Trish McGee, RN */
 
 :root {
     /* Color Palette */
@@ -283,6 +283,42 @@ h2 {
     line-height: 1.65;
     color: var(--text-muted);
     font-weight: 300;
+}
+
+/* Credentials Summary Grid */
+.credentials-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.credential-card {
+    background: var(--champagne-light);
+    border: 1px solid rgba(176, 146, 106, 0.22);
+    border-radius: var(--border-radius);
+    padding: 16px 18px;
+    transition: var(--transition-fast);
+}
+
+.credential-card:hover {
+    border-color: var(--champagne);
+    box-shadow: 0 4px 14px rgba(176, 146, 106, 0.08);
+}
+
+.cred-title {
+    font-weight: 600;
+    font-size: 0.86rem;
+    color: var(--charcoal);
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+}
+
+.cred-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.45;
 }
 
 /* Review Section Styling */
@@ -796,6 +832,11 @@ textarea {
     
     .separator {
         display: none;
+    }
+
+    .credentials-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
     
     .intro-summary {
@@ -1714,8 +1755,65 @@ textarea {
 }
 
 /* ==========================================================================
-   Navigation Menu Styles
+   Navigation Menu & Top Credentials Styles
    ========================================================================== */
+
+.top-credentials-bar {
+    background: linear-gradient(135deg, rgba(176, 146, 106, 0.09) 0%, rgba(176, 146, 106, 0.04) 100%);
+    border: 1px solid rgba(176, 146, 106, 0.22);
+    border-radius: 6px;
+    padding: 7px 14px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.credentials-badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 14px;
+    font-size: 0.77rem;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.credential-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.credential-dot {
+    width: 6.5px;
+    height: 6.5px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.25);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.credential-icon {
+    width: 12px;
+    height: 12px;
+    color: var(--champagne-dark);
+    flex-shrink: 0;
+}
+
+.credential-item strong {
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.credential-divider {
+    color: var(--champagne);
+    opacity: 0.5;
+    font-size: 0.8rem;
+    user-select: none;
+}
 
 .site-nav {
     margin-bottom: 30px;
@@ -1880,6 +1978,20 @@ textarea {
 
 /* Responsive navigation styles */
 @media (max-width: 600px) {
+    .top-credentials-bar {
+        padding: 8px 10px;
+        margin-bottom: 14px;
+    }
+
+    .credentials-badge-group {
+        gap: 5px 8px;
+        font-size: 0.71rem;
+    }
+
+    .credential-divider {
+        display: none;
+    }
+
     .nav-toggle {
         display: flex;
     }

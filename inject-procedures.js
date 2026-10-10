@@ -16,19 +16,19 @@ const specialties = [
     specialtyName: "Rhytidectomy & Facial Rejuvenation (Facelift, Neck Lift, Blepharoplasty)",
     clinicalCondition: "critical blood pressure control to prevent hematomas, delicate suture line care, cold-compress timing, and swelling management",
     procedureFAQQuestion: "What is your clinical protocol for post-facelift recovery at home?",
-    procedureFAQAnswer: "Tricia monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
+    procedureFAQAnswer: "Trish monitors early-stage metrics closely: keeping head elevation at 30-45 degrees, managing blood pressure to protect delicate suture lines, assessing for hematoma or skin flap congestion, and implementing cooling protocols to minimize swelling and bruising."
   },
   {
     specialtyName: "High-Definition Liposuction & Body Contouring (Lipo, Abdominoplasty, Mommy Makeover)",
     clinicalCondition: "fluid balance monitoring, surgical drain output tracking, compression garment adjustments, and seroma prevention",
     procedureFAQQuestion: "How do you manage surgical drains and compression garments after liposuction?",
-    procedureFAQAnswer: "Tricia records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
+    procedureFAQAnswer: "Trish records drain outputs hourly/daily, ensures sterile vacuum pressure is maintained, performs site care to prevent infection, and assists with the safe, comfortable adjustment of medical compression garments to optimize body contouring results."
   },
   {
     specialtyName: "Complex Reconstructive Surgery (Breast Reconstruction, Flap Procedures, Gender-Affirming Surgery)",
     clinicalCondition: "microvascular tissue perfusion monitoring, sterile dressing changes, graft protection, and high-acuity surgical site assessment",
     procedureFAQQuestion: "What specialized monitoring do you provide for complex reconstructive surgery?",
-    procedureFAQAnswer: "Tricia performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
+    procedureFAQAnswer: "Trish performs rigorous capillary refill checks and temperature monitoring of reconstructed flaps to ensure healthy tissue perfusion. She manages sterile dressing changes, tracks drainage, and coordinates closely with reconstructive surgeons for any immediate adjustments."
   }
 ];
 

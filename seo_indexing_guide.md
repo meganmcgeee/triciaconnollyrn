@@ -41,14 +41,14 @@ If you want Google to index your primary pages immediately rather than waiting f
 Since you are a local service business, Google places massive weight on local maps results (the "Map Pack" displaying businesses near the user).
 
 1. Go to [Google Business Profile](https://www.google.com/business/) and sign in.
-2. Create a profile named: **Tricia Connolly, RN - Bespoke Concierge Nursing**.
+2. Create a profile named: **Trish McGee, RN - Bespoke Concierge Nursing**.
 3. **Category**: Select **Home Health Care Service** as your primary category. Add **Nurse** and **Nursing Agency** as secondary categories.
 4. **Location Settings**: 
    - Do NOT enter a physical clinic address if you do not want clients visiting you at home.
    - Select **Service Area** and add target regions: *Beverly Hills, Bel Air, Brentwood, Santa Monica, Malibu, Pacific Palisades, West Los Angeles, Manhattan Beach, Calabasas*.
 5. **Website**: Link it directly to your domain `https://triciaconnollyrn.com`.
 6. **Business Description**: Google allows up to 750 characters. Use this copy, which is optimized with local keywords and designed to attract high-net-worth clients:
-   > "Tricia Connolly, RN is an elite private duty concierge nurse providing bespoke clinical management, post-operative recovery care, and wellness support to high-profile clients, executives, and families. Operating under strict NDAs, Tricia delivers 24/7 hospital-standard care in the privacy of luxury estates across Beverly Hills, Bel Air, Brentwood, Santa Monica, and Malibu. Specializing in recovery for cosmetic, plastic, and complex reconstructive surgeries, she coordinates directly with premier surgeons and specialists from Cedars-Sinai and UCLA Health. Services include sterile wound care, vital monitoring, custom IV hydration, and dedicated travel companion nursing. Experience medical excellence with absolute discretion." (692 characters)
+   > "Trish McGee, RN is an elite private duty concierge nurse providing bespoke clinical management, post-operative recovery care, and wellness support to high-profile clients, executives, and families. Operating under strict NDAs, Trish delivers 24/7 hospital-standard care in the privacy of luxury estates across Beverly Hills, Bel Air, Brentwood, Santa Monica, and Malibu. Specializing in recovery for cosmetic, plastic, and complex reconstructive surgeries, she coordinates directly with premier surgeons and specialists from Cedars-Sinai and UCLA Health. Services include sterile wound care, vital monitoring, custom IV hydration, and dedicated travel companion nursing. Experience medical excellence with absolute discretion." (692 characters)
 7. **Verification**: Google will verify you (usually via a code sent to your phone or a video/postcard). Once verified, you will immediately show up when local clients search for keywords like *"concierge nurse near me"* or *"private duty nurse Beverly Hills"*.
 
 ---

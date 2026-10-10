@@ -1,6 +1,6 @@
 # SEO, Geo-Targeting, AI Search & Google Analytics Guide
 
-We have implemented an optimization system across all pages of Tricia's concierge nursing website to ensure high visibility on search engines, tracking of ad spend, and readability by AI search assistants.
+We have implemented an optimization system across all pages of Trish's concierge nursing website to ensure high visibility on search engines, tracking of ad spend, and readability by AI search assistants.
 
 ---
 
@@ -27,7 +27,7 @@ AI search engines (like Perplexity, Google Gemini, and ChatGPT Search) crawl and
 We optimized for AI engines in three ways:
 1. **JSON-LD Schema Markup (Structured Data)**: Injected a `MedicalBusiness` structured data tag into the home page. This feeds AI search crawlers verified facts (e.g. phone number, operating hours, price tier, and exact services) in a highly readable format.
 2. **Plain-Text Credentials & Service Radius**: Highlighted locations (Beverly Hills, Bel Air, Santa Monica, Greater LA) and credentials (RN, perioperative, concierge) in normal headings and paragraphs.
-3. **Structured Testimonials**: Included clear verified testimonials with locations (e.g. "Bel Air, CA"), helping search models index Tricia's local authority.
+3. **Structured Testimonials**: Included clear verified testimonials with locations (e.g. "Bel Air, CA"), helping search models index Trish's local authority.
 
 ---
 

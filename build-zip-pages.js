@@ -91,18 +91,18 @@ const siteFooterHTML = `
         <footer class="site-footer">
             <div class="footer-divider"></div>
             <div class="footer-content">
-                <p class="footer-tagline">Tricia Connolly, RN &bull; Bespoke Concierge Nursing &amp; Private Duty Care</p>
+                <p class="footer-tagline">Trish McGee, RN &bull; Bespoke Concierge Nursing &amp; Private Duty Care</p>
                 
                 <div class="footer-contact-info">
-                    <span class="footer-loc">Beverly Hills, LA &amp; Orange County</span>
+                    <span class="footer-loc">Santa Monica, Beverly Hills, LA &amp; Orange County</span>
                     <span class="footer-separator" aria-hidden="true">|</span>
                     <a href="/locations" aria-label="View Service Locations">Locations Served</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
                     <a href="/partners" aria-label="B2B Partners and Referrals">Partners &amp; Referrals</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
-                    <a href="mailto:book@triciaconnollyrn.com" aria-label="Email Tricia Connolly at book@triciaconnollyrn.com">book@triciaconnollyrn.com</a>
+                    <a href="mailto:pcm688@yahoo.com" aria-label="Email Trish McGee at pcm688@yahoo.com">pcm688@yahoo.com</a>
                     <span class="footer-separator" aria-hidden="true">|</span>
-                    <a href="tel:3108894846" aria-label="Call Tricia Connolly at 310-889-4846">(310) 889-4846</a>
+                    <a href="tel:3108894846" aria-label="Call Trish McGee at 310-889-4846">(310) 889-4846</a>
                 </div>
 
                 <!-- Collapsible Geo-Targeted Service Areas -->
@@ -124,7 +124,7 @@ const siteFooterHTML = `
 
                 <p class="footer-compliance">Professional nursing services are provided in strict accordance with the California Board of Registered Nursing. All care is delivered under the direction of the client's attending physician. Discretion and NDA-protected privacy are guaranteed.</p>
                 
-                <p class="footer-copyright">&copy; ${currentYear} Tricia Connolly, RN. All rights reserved.</p>
+                <p class="footer-copyright">&copy; ${currentYear} Trish McGee, RN. All rights reserved.</p>
             </div>
         </footer>`;
 
@@ -152,10 +152,10 @@ staticFiles.forEach(file => {
 });
 
 const introTemplates = [
-  "For high-profile individuals, executives, and families seeking clinical excellence without compromise, Tricia Connolly, RN offers a completely bespoke medical management service inside your residence or estate in {{ENCLAVE}}.",
-  "Tricia Connolly, RN provides discrete private duty nursing and premium healthcare coordination for clients residing in the exclusive {{ENCLAVE}} community.",
-  "Designed for high-net-worth families, prominent executives, and public figures, Tricia Connolly, RN offers comprehensive, NDA-protected home nursing care throughout the {{ENCLAVE}} area.",
-  "Elite medical management and professional private duty nursing are now available directly in your home. Tricia Connolly, RN delivers personalized clinical services inside {{ENCLAVE}}."
+  "For high-profile individuals, executives, and families seeking clinical excellence without compromise, Trish McGee, RN offers a completely bespoke medical management service inside your residence or estate in {{ENCLAVE}}.",
+  "Trish McGee, RN provides discrete private duty nursing and premium healthcare coordination for clients residing in the exclusive {{ENCLAVE}} community.",
+  "Designed for high-net-worth families, prominent executives, and public figures, Trish McGee, RN offers comprehensive, NDA-protected home nursing care throughout the {{ENCLAVE}} area.",
+  "Elite medical management and professional private duty nursing are now available directly in your home. Trish McGee, RN delivers personalized clinical services inside {{ENCLAVE}}."
 ];
 
 const bulletSets = [
@@ -196,7 +196,7 @@ locations.forEach((loc, index) => {
       {
         "@type": "MedicalBusiness",
         "@id": "https://triciaconnollyrn.com/#business",
-        "name": "Tricia Connolly, RN - Bespoke Concierge Nursing",
+        "name": "Trish McGee, RN - Bespoke Concierge Nursing",
         "image": "https://triciaconnollyrn.com/assets/concierge.png",
         "logo": "https://triciaconnollyrn.com/assets/concierge.png",
         "url": "https://triciaconnollyrn.com",
@@ -215,7 +215,7 @@ locations.forEach((loc, index) => {
         "@type": "MedicalWebPage",
         "@id": `https://triciaconnollyrn.com/${loc.slug}#webpage`,
         "url": `https://triciaconnollyrn.com/${loc.slug}`,
-        "name": `Private Duty Nursing & Concierge Care in ${loc.enclave} | Tricia Connolly, RN`,
+        "name": `Private Duty Nursing & Concierge Care in ${loc.enclave} | Trish McGee, RN`,
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "@id": `https://triciaconnollyrn.com/${loc.slug}#primaryimage`,
@@ -223,7 +223,7 @@ locations.forEach((loc, index) => {
         },
         "reviewedBy": {
           "@type": "Person",
-          "name": "Tricia Connolly, RN",
+          "name": "Trish McGee, RN",
           "jobTitle": "Registered Nurse"
         }
       },
@@ -244,7 +244,7 @@ locations.forEach((loc, index) => {
             "name": "Do you work under Non-Disclosure Agreements (NDAs)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, absolutely. Uncompromising discretion and absolute privacy are core tenets of Tricia's practice. She routinely operates under strict NDAs for celebrity, executive, and high-net-worth clients."
+              "text": "Yes, absolutely. Uncompromising discretion and absolute privacy are core tenets of Trish's practice. She routinely operates under strict NDAs for celebrity, executive, and high-net-worth clients."
             }
           },
           {
@@ -252,7 +252,7 @@ locations.forEach((loc, index) => {
             "name": "Is 24/7 care available?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Depending on clinical needs, Tricia can coordinate round-the-clock shift nursing or provide dedicated daytime/nighttime support."
+              "text": "Yes. Depending on clinical needs, Trish can coordinate round-the-clock shift nursing or provide dedicated daytime/nighttime support."
             }
           },
           {
@@ -338,7 +338,7 @@ if (fs.existsSync(locationsTemplatePath)) {
       {
         "@type": "MedicalBusiness",
         "@id": "https://triciaconnollyrn.com/#business",
-        "name": "Tricia Connolly, RN - Bespoke Concierge Nursing",
+        "name": "Trish McGee, RN - Bespoke Concierge Nursing",
         "image": "https://triciaconnollyrn.com/assets/concierge.png",
         "logo": "https://triciaconnollyrn.com/assets/concierge.png",
         "url": "https://triciaconnollyrn.com",
@@ -357,7 +357,7 @@ if (fs.existsSync(locationsTemplatePath)) {
         "@type": "MedicalWebPage",
         "@id": "https://triciaconnollyrn.com/locations#webpage",
         "url": "https://triciaconnollyrn.com/locations",
-        "name": "Service Locations & Areas Served | Tricia Connolly, RN",
+        "name": "Service Locations & Areas Served | Trish McGee, RN",
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "@id": "https://triciaconnollyrn.com/locations#primaryimage",
@@ -365,7 +365,7 @@ if (fs.existsSync(locationsTemplatePath)) {
         },
         "reviewedBy": {
           "@type": "Person",
-          "name": "Tricia Connolly, RN",
+          "name": "Trish McGee, RN",
           "jobTitle": "Registered Nurse"
         }
       },

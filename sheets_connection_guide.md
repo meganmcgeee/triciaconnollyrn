@@ -17,7 +17,7 @@ This guide explains how to connect your landing page lead capture forms to a Goo
    * **Column H**: UTM Medium
    * **Column I**: UTM Campaign
 3. Name the sheet (tab) at the bottom `Sheet1` (this is the default).
-4. Give your spreadsheet a title, e.g., `Tricia Connolly RN - Leads`.
+4. Give your spreadsheet a title, e.g., `Trish McGee RN - Leads`.
 
 ---
 

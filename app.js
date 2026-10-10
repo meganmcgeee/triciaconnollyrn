@@ -1,5 +1,5 @@
 /**
- * Tricia Connolly, RN - Bespoke Concierge Nursing
+ * Trish McGee, RN - Bespoke Concierge Nursing
  * Client Reviews & Testimonials JavaScript Logic
  */
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'seed-1',
             rating: 5,
             category: 'post-op',
-            text: "Following my complex reconstructive surgery at {{LOCAL_HOSPITAL}}, Tricia provided round-the-clock recovery monitoring at my {{ENCLAVE}} estate. Her clinical precision, proactive pain management, and absolute professionalism made my rehabilitation seamless. She is a top-tier nurse.",
+            text: "Following my complex reconstructive surgery at {{LOCAL_HOSPITAL}}, Trish provided round-the-clock recovery monitoring at my {{ENCLAVE}} estate. Her clinical precision, proactive pain management, and absolute professionalism made my rehabilitation seamless. She is a top-tier nurse.",
             author: "H. K.",
             location: "{{NEIGHBORHOOD}}, CA",
             date: "May 12, 2026",
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'seed-2',
             rating: 5,
             category: 'concierge',
-            text: "Tricia has provided private duty nursing for my family during executive travels and at our estate in {{ENCLAVE}}. Her nursing care is exceptional, but what sets her apart is her absolute discretion and ability to seamlessly interface with our team of specialists and private physicians near {{LOCAL_HOSPITAL}}.",
+            text: "Trish has provided private duty nursing for my family during executive travels and at our estate in {{ENCLAVE}}. Her nursing care is exceptional, but what sets her apart is her absolute discretion and ability to seamlessly interface with our team of specialists and private physicians near {{LOCAL_HOSPITAL}}.",
             author: "Anonymous",
             location: "{{NEIGHBORHOOD}}, CA",
             date: "Mar 24, 2026",
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'seed-3',
             rating: 5,
             category: 'iv-palliative',
-            text: "We brought Tricia in for in-home palliative support and custom IV hydration for our mother at her {{ENCLAVE}} residence. Her compassionate bedside manner and profound dignity brought our family immense comfort. Her expertise in clinical symptom management is unparalleled.",
+            text: "We brought Trish in for in-home palliative support and custom IV hydration for our mother at her {{ENCLAVE}} residence. Her compassionate bedside manner and profound dignity brought our family immense comfort. Her expertise in clinical symptom management is unparalleled.",
             author: "The L. Family",
             location: "{{NEIGHBORHOOD}}, CA",
             date: "Apr 05, 2026",
@@ -73,17 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialize reviews from localStorage or seed data
-    let reviews = JSON.parse(localStorage.getItem('tricia_nursing_reviews'));
+    let reviews = JSON.parse(localStorage.getItem('trish_nursing_reviews') || localStorage.getItem('tricia_nursing_reviews'));
     if (!reviews || reviews.length === 0) {
         reviews = defaultReviews;
-        localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
+        localStorage.setItem('trish_nursing_reviews', JSON.stringify(reviews));
     } else {
         // Migration: Ensure seed reviews are updated to template-based versions
         let updated = false;
         defaultReviews.forEach(defRev => {
             const index = reviews.findIndex(r => r.id === defRev.id);
             if (index !== -1) {
-                if (!reviews[index].defaults) {
+                if (!reviews[index].defaults || reviews[index].text.includes('Tricia')) {
                     reviews[index] = defRev;
                     updated = true;
                 }
@@ -92,9 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updated = true;
             }
         });
-        if (updated) {
-            localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
-        }
+        localStorage.setItem('trish_nursing_reviews', JSON.stringify(reviews));
     }
 
     // Determine default category based on page path and query parameters
@@ -522,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 5. Update reviews array
             reviews.unshift(newReview);
-            localStorage.setItem('tricia_nursing_reviews', JSON.stringify(reviews));
+            localStorage.setItem('trish_nursing_reviews', JSON.stringify(reviews));
 
             // 6. Update view
             renderReviews();
