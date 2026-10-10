@@ -22,12 +22,12 @@ let errors = 0;
 
 // Verify Sitemap has basic entries
 const mainUrls = [
-  'https://triciaconnollyrn.com/',
-  'https://triciaconnollyrn.com/locations',
-  'https://triciaconnollyrn.com/concierge',
-  'https://triciaconnollyrn.com/post-op',
-  'https://triciaconnollyrn.com/iv-therapy',
-  'https://triciaconnollyrn.com/partners'
+  'https://trishmcgeern.com/',
+  'https://trishmcgeern.com/locations',
+  'https://trishmcgeern.com/concierge',
+  'https://trishmcgeern.com/post-op',
+  'https://trishmcgeern.com/iv-therapy',
+  'https://trishmcgeern.com/partners'
 ];
 
 mainUrls.forEach(url => {
@@ -74,7 +74,7 @@ locations.forEach((loc) => {
   }
 
   // 4. Verify Sitemap inclusion
-  const sitemapUrl = `https://triciaconnollyrn.com/${loc.slug}`;
+  const sitemapUrl = `https://trishmcgeern.com/${loc.slug}`;
   if (!sitemapContent.includes(sitemapUrl)) {
     console.error(`Error: sitemap.xml is missing URL for: ${filename}`);
     errors++;

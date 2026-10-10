@@ -195,11 +195,11 @@ locations.forEach((loc, index) => {
     "@graph": [
       {
         "@type": "MedicalBusiness",
-        "@id": "https://triciaconnollyrn.com/#business",
+        "@id": "https://trishmcgeern.com/#business",
         "name": "Trish McGee, RN - Bespoke Concierge Nursing",
-        "image": "https://triciaconnollyrn.com/assets/concierge.png",
-        "logo": "https://triciaconnollyrn.com/assets/concierge.png",
-        "url": "https://triciaconnollyrn.com",
+        "image": "https://trishmcgeern.com/assets/concierge.png",
+        "logo": "https://trishmcgeern.com/assets/concierge.png",
+        "url": "https://trishmcgeern.com",
         "telephone": "+1-310-889-4846",
         "priceRange": "$$$$",
         "address": {
@@ -213,13 +213,13 @@ locations.forEach((loc, index) => {
       },
       {
         "@type": "MedicalWebPage",
-        "@id": `https://triciaconnollyrn.com/${loc.slug}#webpage`,
-        "url": `https://triciaconnollyrn.com/${loc.slug}`,
+        "@id": `https://trishmcgeern.com/${loc.slug}#webpage`,
+        "url": `https://trishmcgeern.com/${loc.slug}`,
         "name": `Private Duty Nursing & Concierge Care in ${loc.enclave} | Trish McGee, RN`,
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "@id": `https://triciaconnollyrn.com/${loc.slug}#primaryimage`,
-          "url": "https://triciaconnollyrn.com/assets/concierge.png"
+          "@id": `https://trishmcgeern.com/${loc.slug}#primaryimage`,
+          "url": "https://trishmcgeern.com/assets/concierge.png"
         },
         "reviewedBy": {
           "@type": "Person",
@@ -229,7 +229,7 @@ locations.forEach((loc, index) => {
       },
       {
         "@type": "FAQPage",
-        "@id": `https://triciaconnollyrn.com/${loc.slug}#faq`,
+        "@id": `https://trishmcgeern.com/${loc.slug}#faq`,
         "mainEntity": [
           {
             "@type": "Question",
@@ -337,11 +337,11 @@ if (fs.existsSync(locationsTemplatePath)) {
     "@graph": [
       {
         "@type": "MedicalBusiness",
-        "@id": "https://triciaconnollyrn.com/#business",
+        "@id": "https://trishmcgeern.com/#business",
         "name": "Trish McGee, RN - Bespoke Concierge Nursing",
-        "image": "https://triciaconnollyrn.com/assets/concierge.png",
-        "logo": "https://triciaconnollyrn.com/assets/concierge.png",
-        "url": "https://triciaconnollyrn.com",
+        "image": "https://trishmcgeern.com/assets/concierge.png",
+        "logo": "https://trishmcgeern.com/assets/concierge.png",
+        "url": "https://trishmcgeern.com",
         "telephone": "+1-310-889-4846",
         "priceRange": "$$$$",
         "address": {
@@ -355,13 +355,13 @@ if (fs.existsSync(locationsTemplatePath)) {
       },
       {
         "@type": "MedicalWebPage",
-        "@id": "https://triciaconnollyrn.com/locations#webpage",
-        "url": "https://triciaconnollyrn.com/locations",
+        "@id": "https://trishmcgeern.com/locations#webpage",
+        "url": "https://trishmcgeern.com/locations",
         "name": "Service Locations & Areas Served | Trish McGee, RN",
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "@id": "https://triciaconnollyrn.com/locations#primaryimage",
-          "url": "https://triciaconnollyrn.com/assets/concierge.png"
+          "@id": "https://trishmcgeern.com/locations#primaryimage",
+          "url": "https://trishmcgeern.com/assets/concierge.png"
         },
         "reviewedBy": {
           "@type": "Person",
@@ -371,13 +371,13 @@ if (fs.existsSync(locationsTemplatePath)) {
       },
       {
         "@type": "ItemList",
-        "@id": "https://triciaconnollyrn.com/locations#itemlist",
+        "@id": "https://trishmcgeern.com/locations#itemlist",
         "name": "Los Angeles Private Duty Nursing Locations",
         "numberOfItems": locations.length,
         "itemListElement": locations.map((loc, idx) => ({
           "@type": "ListItem",
           "position": idx + 1,
-          "url": `https://triciaconnollyrn.com/${loc.slug}`,
+          "url": `https://trishmcgeern.com/${loc.slug}`,
           "name": `${loc.enclave} Concierge Nursing Care`
         }))
       }
@@ -407,39 +407,39 @@ if (fs.existsSync(locationsTemplatePath)) {
 let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://triciaconnollyrn.com/</loc>
+    <loc>https://trishmcgeern.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://triciaconnollyrn.com/locations</loc>
+    <loc>https://trishmcgeern.com/locations</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://triciaconnollyrn.com/concierge</loc>
+    <loc>https://trishmcgeern.com/concierge</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://triciaconnollyrn.com/post-op</loc>
+    <loc>https://trishmcgeern.com/post-op</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://triciaconnollyrn.com/iv-therapy</loc>
+    <loc>https://trishmcgeern.com/iv-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://triciaconnollyrn.com/partners</loc>
+    <loc>https://trishmcgeern.com/partners</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`;
 
 generatedSlugs.forEach((slug) => {
   sitemapContent += `\n  <url>
-    <loc>https://triciaconnollyrn.com/${slug}</loc>
+    <loc>https://trishmcgeern.com/${slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>`;
