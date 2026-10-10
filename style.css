@@ -1762,20 +1762,21 @@ textarea {
     background: linear-gradient(135deg, rgba(176, 146, 106, 0.09) 0%, rgba(176, 146, 106, 0.04) 100%);
     border: 1px solid rgba(176, 146, 106, 0.22);
     border-radius: 6px;
-    padding: 7px 14px;
+    padding: 6px 12px;
     margin-bottom: 18px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .credentials-badge-group {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 8px 14px;
-    font-size: 0.77rem;
+    gap: 8px 12px;
+    font-size: 0.73rem;
     letter-spacing: 0.2px;
-    line-height: 1.4;
+    line-height: 1.3;
     color: var(--text-primary);
 }
 
@@ -1982,17 +1983,22 @@ textarea {
 /* Responsive navigation styles */
 @media (max-width: 600px) {
     .top-credentials-bar {
-        padding: 8px 10px;
+        padding: 5px 8px;
         margin-bottom: 14px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .credentials-badge-group {
-        gap: 5px 8px;
-        font-size: 0.71rem;
+        gap: 6px 10px;
+        font-size: 0.67rem;
+        flex-wrap: nowrap;
+        white-space: nowrap;
     }
 
     .credential-divider {
-        display: none;
+        display: inline;
+        font-size: 0.7rem;
     }
 
     .nav-toggle {
